@@ -18,33 +18,13 @@
 
       html,
       body {
-        height: 100%;
         background-color: #f7f2ec;
       }
 
-      /* portrait screens: fill the screen, keep the top so all the text stays visible */
       .banner {
         display: block;
         width: 100%;
-        height: 100vh;
-        height: 100dvh;
-        object-fit: cover;
-        object-position: left top;
-      }
-
-      /* landscape screens: fill the screen, keep the left side where the text is */
-      @media (min-aspect-ratio: 1/1) {
-        .banner {
-          object-position: left center;
-        }
-      }
-
-      /* very wide screens: show the whole banner so nothing is cut at the bottom */
-      @media (min-aspect-ratio: 16/9) {
-        .banner {
-          object-fit: contain;
-          object-position: right center;
-        }
+        height: auto;
       }
     </style>
   </head>
