@@ -6,7 +6,9 @@
     <title>Loughton Private GP | Coming Soon</title>
     <meta name="description" content="Loughton Private GP is launching soon." />
     <meta name="theme-color" content="#f7f2ec" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <style>
       * {
         margin: 0;
@@ -26,23 +28,28 @@
         height: 100vh;
         height: 100dvh;
         object-fit: cover;
-        object-position: left center;
-      }
-
-      @media (min-width: 768px) {
-        .banner {
-          object-position: center;
-        }
+        object-position: center;
       }
     </style>
   </head>
   <body>
     <main>
-      <img
-        class="banner"
-        src="banner_loughton-01.jpg.jpeg"
-        alt="Loughton Private GP, coming soon"
-      />
+      <picture>
+        <source
+          media="(min-aspect-ratio: 1/1)"
+          srcset="desktop-banner-2560.webp"
+          width="2560"
+          height="1440"
+        />
+        <img
+          class="banner"
+          src="mobile-banner-1080.webp"
+          width="1080"
+          height="1920"
+          alt="Loughton Private GP, coming soon"
+          fetchpriority="high"
+        />
+      </picture>
     </main>
   </body>
 </html>
