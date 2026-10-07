@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loughton Private GP | Coming Soon</title>
     <meta name="description" content="Loughton Private GP is launching soon." />
-    <meta name="theme-color" content="#eee7de" />
+    <meta name="theme-color" content="#f7f2ec" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <style>
       * {
@@ -17,7 +17,7 @@
       html,
       body {
         height: 100%;
-        background-color: #eee7de;
+        background-color: #f7f2ec;
       }
 
       .banner {
@@ -26,22 +26,23 @@
         height: 100vh;
         height: 100dvh;
         object-fit: cover;
+        object-position: left center;
+      }
+
+      @media (min-width: 768px) {
+        .banner {
+          object-position: center;
+        }
       }
     </style>
   </head>
   <body>
     <main>
-      <picture>
-        <source
-          media="(min-width: 768px)"
-          srcset="/coming-soon-desktop.webp"
-        />
-        <img
-          class="banner"
-          src="/coming-soon-mobile.webp"
-          alt="Loughton Private GP, coming soon"
-        />
-      </picture>
+      <img
+        class="banner"
+        src="banner_loughton-01.jpg.jpeg"
+        alt="Loughton Private GP, coming soon"
+      />
     </main>
   </body>
 </html>
