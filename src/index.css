@@ -1,0 +1,391 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/inter-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./assets/fonts/inter-medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./assets/fonts/inter-semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Libre Baskerville";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/libre-baskerville-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Libre Baskerville";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./assets/fonts/libre-baskerville-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Libre Baskerville";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/libre-baskerville-italic.woff2") format("woff2");
+}
+
+:root {
+  --clr-black: #000000;
+  --clr-text: #3b3a38;
+  --clr-muted: #6f6962;
+  --clr-tan: #b09f89;
+  --clr-cream: #eee7de;
+  --clr-white: #ffffff;
+
+  --ff-heading: "Libre Baskerville", Georgia, "Times New Roman", serif;
+  --ff-body: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-ink: var(--clr-black);
+  --color-body: var(--clr-text);
+  --color-tan: var(--clr-tan);
+  --color-cream: var(--clr-cream);
+  --color-muted: var(--clr-muted);
+  --font-heading: var(--ff-heading);
+  --font-body: var(--ff-body);
+}
+
+@layer base {
+  :root {
+    --fs-body: 15px;
+    --fs-lead: 16px;
+    --fs-small: 13px;
+    --fs-ui: 15px;
+  }
+
+  html {
+    background-color: var(--clr-white);
+  }
+
+  body {
+    background-color: var(--clr-white);
+    color: var(--clr-text);
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--clr-black);
+    font-family: var(--ff-heading);
+    font-weight: 400;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: 1.1875rem;
+    line-height: 1.3;
+  }
+
+  h4 {
+    font-size: 1.0625rem;
+    line-height: 1.3;
+  }
+
+  h5 {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  h6 {
+    font-size: 0.9375rem;
+    line-height: 1.3;
+  }
+
+  p {
+    color: var(--clr-text);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  button {
+    font-family: var(--ff-body);
+    font-size: var(--fs-ui);
+    font-weight: 400;
+    line-height: 1.4;
+    color: inherit;
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: var(--ff-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: inherit;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--clr-text);
+    opacity: 1;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--clr-text);
+    outline-offset: 3px;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --fs-body: 16px;
+      --fs-lead: 17px;
+      --fs-small: 14px;
+      --fs-ui: 15px;
+    }
+
+    h1 {
+      font-size: 3.25rem;
+    }
+
+    h2 {
+      font-size: 2.25rem;
+    }
+
+    h3 {
+      font-size: 1.3125rem;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+    }
+
+    h5 {
+      font-size: 1.0625rem;
+    }
+
+    h6 {
+      font-size: 1rem;
+    }
+  }
+
+  /* Desktop: the whole page scales with the root size, like the 1920px design */
+  @media (min-width: 1280px) {
+    html {
+      font-size: 13px;
+    }
+
+    :root {
+      --fs-body: 15px;
+      --fs-lead: 17px;
+      --fs-small: 13px;
+      --fs-ui: 15px;
+    }
+
+    h1 {
+      font-size: 4.5rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+    }
+
+    h5 {
+      font-size: 1.125rem;
+    }
+
+    h6 {
+      font-size: 1rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    html {
+      font-size: 14px;
+    }
+
+    :root {
+      --fs-lead: 18px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    html {
+      font-size: 15px;
+    }
+
+    :root {
+      --fs-body: 16px;
+      --fs-lead: 19px;
+      --fs-small: 14px;
+      --fs-ui: 16px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    html {
+      font-size: 16px;
+    }
+
+    :root {
+      --fs-lead: 20px;
+    }
+  }
+}
+
+@layer components {
+  .page-width-whole {
+    width: 100%;
+  }
+
+  .page-width-small {
+    width: 100%;
+    max-width: 1920px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  .text-lead {
+    color: var(--clr-muted);
+    font-size: var(--fs-lead);
+    line-height: 1.5;
+  }
+
+  .text-small {
+    color: var(--clr-muted);
+    font-size: var(--fs-small);
+    line-height: 1.6;
+  }
+
+  .text-ui {
+    font-size: var(--fs-ui);
+    line-height: 1.4;
+  }
+
+  .label {
+    color: var(--clr-tan);
+    font-size: var(--fs-small);
+    line-height: 1.4;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .form-label {
+    color: var(--clr-tan);
+    font-size: var(--fs-small);
+    line-height: 1.5;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .form-control {
+    width: 100%;
+    border: 1px solid rgb(176 159 137 / 0.4);
+    border-radius: 0.375rem;
+    background-color: var(--clr-white);
+    padding: 0.875rem 1.125rem;
+    color: var(--clr-text);
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .form-control::placeholder {
+    color: #aaa29b;
+  }
+
+  .form-control:hover {
+    border-color: var(--clr-tan);
+  }
+
+  .form-control:focus {
+    border-color: var(--clr-text);
+    box-shadow: 0 0 0 3px rgb(176 159 137 / 0.35);
+    outline: none;
+  }
+
+  select.form-control {
+    appearance: none;
+    padding-right: 3rem;
+  }
+
+  select.form-control:required:invalid {
+    color: #aaa29b;
+  }
+
+  @media (min-width: 768px) {
+    .form-control {
+      font-size: var(--fs-small);
+    }
+  }
+
+  textarea.form-control {
+    min-height: 7.5rem;
+    resize: vertical;
+  }
+
+  @media (min-width: 768px) {
+    .page-width-small {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .page-width-small {
+      padding-inline: 4rem;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .page-width-small {
+      padding-inline: 6.25rem;
+    }
+  }
+}
