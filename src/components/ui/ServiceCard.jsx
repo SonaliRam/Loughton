@@ -6,7 +6,7 @@ function ServiceCard({ title, price, text, image, to = "/services", isCopy = fal
   return (
     <article
       data-card
-      className="group flex h-full flex-col overflow-hidden rounded-lg border border-tan/40 bg-white transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:border-tan hover:shadow-[0_18px_36px_-16px_rgba(176,159,137,0.65)] motion-reduce:transition-none xl:min-h-[31.25rem]"
+      className="group flex h-full flex-col overflow-hidden rounded-box border border-tan/40 bg-white transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:border-tan hover:shadow-[0_18px_36px_-16px_rgba(176,159,137,0.65)] motion-reduce:transition-none xl:min-h-[31.25rem]"
     >
       <div className="aspect-[16/7] overflow-hidden">
         <div data-card-image className="h-full w-full">

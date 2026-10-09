@@ -151,7 +151,7 @@ function Header() {
 
           <button
             type="button"
-            className="flex h-11 w-11 items-center justify-center rounded-md text-ink xl:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-box text-ink xl:hidden"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"

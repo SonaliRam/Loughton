@@ -7,7 +7,7 @@ function MoreServices() {
   return (
     <section
       aria-labelledby="more-services-heading"
-      className="page-width-small pb-12 md:pt-4 xl:pb-[3.75rem] xl:pt-[7.5rem]"
+      className="page-width-small section-space"
     >
       <SectionHeading id="more-services-heading" label="More care, same unhurried approach">
         Services designed around

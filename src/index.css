@@ -70,6 +70,7 @@
   --color-muted: var(--clr-muted);
   --font-heading: var(--ff-heading);
   --font-body: var(--ff-body);
+  --radius-box: 6px;
 }
 
 @layer base {
@@ -328,7 +329,7 @@
   .form-control {
     width: 100%;
     border: 1px solid rgb(176 159 137 / 0.4);
-    border-radius: 0.375rem;
+    border-radius: var(--radius-box);
     background-color: var(--clr-white);
     padding: 0.875rem 1.125rem;
     color: var(--clr-text);
@@ -387,5 +388,38 @@
     .page-width-small {
       padding-inline: 6.25rem;
     }
+  }
+
+  /* vertical space of every page section: 80px between two sections on mobile, 96px on tablet, 112px on desktop */
+  .service-section,
+  .section-space {
+    padding-block: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .service-section,
+    .section-space {
+      padding-block: 3rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .service-section,
+    .section-space {
+      padding-block: 4rem;
+    }
+  }
+
+  /* one size for every service image (services 1, 2, 5, 6 and 8): 4:5 portrait, up to 460px wide */
+  .service-image {
+    position: relative;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 460px;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border: 1px solid var(--clr-tan);
+    border-radius: var(--radius-box);
+    background-color: var(--clr-cream);
   }
 }

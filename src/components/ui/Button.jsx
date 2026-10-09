@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const base =
-  "relative isolate inline-flex items-center justify-center overflow-hidden rounded-md border text-ui whitespace-nowrap transition-colors duration-300 before:absolute before:left-1/2 before:top-[-155%] before:-z-10 before:h-[294%] before:w-[115%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:transition-[top] before:duration-500 before:ease-[cubic-bezier(0.4,0,0.2,1)] before:content-[''] hover:before:top-1/2 focus-visible:before:top-1/2 motion-reduce:before:transition-none";
+  "relative isolate inline-flex items-center justify-center overflow-hidden rounded-box border text-ui whitespace-nowrap transition-colors duration-300 before:absolute before:left-1/2 before:top-[-155%] before:-z-10 before:h-[294%] before:w-[115%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:transition-[top] before:duration-500 before:ease-[cubic-bezier(0.4,0,0.2,1)] before:content-[''] hover:before:top-1/2 focus-visible:before:top-1/2 motion-reduce:before:transition-none";
 
 const variants = {
   primary: "border-tan bg-tan text-white before:bg-white hover:text-ink focus-visible:text-ink",

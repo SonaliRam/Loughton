@@ -11,7 +11,7 @@ function WhyChooseUs() {
     <section
       ref={sectionRef}
       aria-labelledby="why-heading"
-      className="page-width-small pb-14 md:pb-20 xl:pb-[6.25rem]"
+      className="page-width-small section-space"
     >
       <h2 id="why-heading" data-reveal>
         Why choose us

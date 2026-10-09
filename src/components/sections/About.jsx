@@ -36,7 +36,7 @@ function About() {
     <section
       ref={sectionRef}
       aria-labelledby="about-heading"
-      className="page-width-small pb-10 pt-12 md:pb-12 md:pt-20 xl:pb-16 xl:pt-[6.25rem]"
+      className="page-width-small section-space"
     >
       <p data-reveal className="label">
         {about.label}
@@ -62,7 +62,7 @@ function About() {
 
         <div
           data-about="image"
-          className="group aspect-[5/3] overflow-hidden rounded-lg"
+          className="group aspect-[5/3] overflow-hidden rounded-box"
         >
           <ImagePlaceholder className="transition-transform duration-700 ease-out group-hover:scale-105" />
         </div>

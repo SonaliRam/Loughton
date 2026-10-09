@@ -112,11 +112,11 @@ function RatingCard({ score, count, prompt, url }) {
   return (
     <div
       ref={cardRef}
-      className="relative flex h-full flex-col overflow-hidden rounded-lg border border-tan/40 bg-white p-6 text-white md:p-10 xl:px-[3.125rem] xl:py-[3.125rem]"
+      className="relative flex h-full flex-col overflow-hidden rounded-box border border-tan/40 bg-white p-6 text-white md:p-10 xl:px-[3.125rem] xl:py-[3.125rem]"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -inset-px overflow-hidden rounded-lg"
+        className="pointer-events-none absolute -inset-px overflow-hidden rounded-box"
       >
         <div data-water className="absolute inset-0 bg-tan">
           <Wave wave="back" className="-top-4 opacity-50" />

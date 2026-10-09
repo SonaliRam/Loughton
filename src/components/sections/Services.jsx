@@ -6,7 +6,7 @@ function Services() {
   return (
     <section
       aria-labelledby="services-heading"
-      className="page-width-small pb-14 pt-10 md:pb-20 md:pt-12 xl:pb-[6.25rem] xl:pt-16"
+      className="page-width-small section-space"
     >
       <SectionHeading
         id="services-heading"

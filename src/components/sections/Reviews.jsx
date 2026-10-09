@@ -12,7 +12,7 @@ function Reviews() {
   return (
     <section
       aria-labelledby="reviews-heading"
-      className="page-width-small py-14 md:py-20 xl:pb-[3.5rem] xl:pt-[6.5rem]"
+      className="page-width-small section-space"
     >
       <SectionHeading
         id="reviews-heading"

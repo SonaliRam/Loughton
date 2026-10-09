@@ -84,17 +84,17 @@ function Hero() {
         data-hero="social"
         className="absolute right-4 top-1/2 hidden -translate-y-1/2 flex-col gap-8 md:flex xl:right-10 xl:gap-9"
       >
-        <li data-hero="social-item">
+        {/* <li data-hero="social-item">
           <a href={siteInfo.phoneLink} aria-label="Call us" className={iconLinkClass}>
             <PhoneIcon className="w-7 xl:w-8" />
           </a>
-        </li>
-        <li data-hero="social-item">
+        </li> */}
+        {/* <li data-hero="social-item">
           <a href={`mailto:${siteInfo.email}`} aria-label="Email us" className={iconLinkClass}>
             <MailIcon className="w-8 xl:w-[2.3125rem]" />
           </a>
-        </li>
-        <li data-hero="social-item">
+        </li> */}
+        {/* <li data-hero="social-item">
           <a
             href="#"
             aria-label="Instagram"
@@ -102,7 +102,7 @@ function Hero() {
           >
             <InstagramIcon className="w-7 xl:w-[2.0625rem]" />
           </a>
-        </li>
+        </li> */}
       </ul>
     </section>
   );

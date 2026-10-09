@@ -4,7 +4,7 @@ function ReviewCard({ title, text, name, role }) {
   const lastWord = words.pop();
 
   return (
-    <figure className="group flex w-full flex-col rounded-lg border border-tan/40 bg-white p-6 transition-[border-color,box-shadow] duration-300 hover:border-tan hover:shadow-[0_18px_36px_-18px_rgba(176,159,137,0.6)] md:p-10 xl:p-[4.375rem]">
+    <figure className="group flex w-full flex-col rounded-box border border-tan/40 bg-white p-6 transition-[border-color,box-shadow] duration-300 hover:border-tan hover:shadow-[0_18px_36px_-18px_rgba(176,159,137,0.6)] md:p-10 xl:p-[4.375rem]">
       <blockquote>
         <h3 className="relative text-body text-[1.375rem] md:text-[1.75rem] xl:text-[2.25rem]">
           <span

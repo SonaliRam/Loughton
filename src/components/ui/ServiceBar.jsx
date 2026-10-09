@@ -33,7 +33,7 @@ function ServiceBar({ title, list }) {
   return (
     <div
       ref={barRef}
-      className="flex flex-col gap-5 rounded-lg bg-tan px-6 py-6 md:flex-row md:items-center md:justify-between md:gap-8 xl:px-7 xl:py-6"
+      className="flex flex-col gap-5 rounded-box bg-tan px-6 py-6 md:flex-row md:items-center md:justify-between md:gap-8 xl:px-7 xl:py-6"
     >
       <div>
         <p data-bar className="text-ui font-medium text-white">
