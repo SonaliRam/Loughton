@@ -163,3 +163,12 @@ export function ShieldIcon({ className }) {
     </StrokeSvg>
   );
 }
+
+export function WhatsAppIcon({ className }) {
+  return (
+    <StrokeSvg className={className}>
+      <path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z" />
+      <path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-.8.8a3.6 3.6 0 0 1-1.5-1.5l.8-.8-1-2-1 .5z" />
+    </StrokeSvg>
+  );
+}

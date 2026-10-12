@@ -149,4 +149,6 @@ export const serviceCta = {
   text: "Get in touch and our team will help guide you to the right appointment. No referral is required, and new patients of all ages are welcome.",
   button: "Request appointment",
   visit: "110 High Road, Loughton, IG10 4HJ",
+  // put the GIF in the public folder and set its path here, for example "/cta.gif"; empty shows a placeholder
+  media: "",
 };

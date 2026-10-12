@@ -105,10 +105,11 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/terms-and-conditions" className={linkClass}>
-                Terms &amp; Conditions
+              <Link to="/complaints-procedure" className={linkClass}>
+                Complaints Procedure
               </Link>
             </li>
+         
           </ul>
         </div>
       </div>
