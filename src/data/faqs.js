@@ -1,4 +1,4 @@
-// questions and answers come from the content document; the category groups are used by the filter buttons
+
 export const faqCategories = [
   { id: "booking", label: "Booking & access" },
   { id: "appointments", label: "Appointments & fees" },

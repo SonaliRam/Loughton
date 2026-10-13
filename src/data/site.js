@@ -13,20 +13,18 @@ export const siteInfo = {
 };
 
 export const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "About Us", to: "/about" },
   { label: "Our Team", to: "/our-team" },
   { label: "Services", to: "/services" },
   { label: "Booking", to: "/booking" },
-  { label: "FAQs", to: "/faqs" },
+  { label: "About Us", to: "/about" },
   { label: "Contact", to: "/contact" },
+  { label: "FAQs", to: "/faqs" },
 ];
 
 export const footerLinks = [
-  { label: "Home", to: "/" },
   { label: "About Us", to: "/about" },
-  { label: "Services", to: "/services" },
   { label: "Contact", to: "/contact" },
+  { label: "FAQs", to: "/faqs" },
 ];
 
 // placeholder profile links, replace with the real URLs

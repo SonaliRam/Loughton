@@ -83,6 +83,7 @@
 
   html {
     background-color: var(--clr-white);
+    scroll-behavior: smooth;
   }
 
   body {
@@ -316,6 +317,7 @@
     line-height: 1.4;
     letter-spacing: 0.2em;
     text-transform: uppercase;
+    font-weight: bolder;
   }
 
   .form-label {

@@ -29,6 +29,7 @@ const options = [
   },
   {
     title: "Email",
+    text: "Send us an email for bookings, enquiries, or any questions. We’ll be happy to help.",
     value: siteInfo.email,
     href: `mailto:${siteInfo.email}`,
     icon: MailIcon,
@@ -46,7 +47,9 @@ function OptionCard({ title, text, value, icon: Icon }) {
       </span>
       <h2 className="text-xl">{title}</h2>
       {text ? <p className="text-small mt-2">{text}</p> : null}
-      <strong className="mt-auto break-words pt-5 font-medium text-ink">{value}</strong>
+      <strong className="mt-auto break-words pt-5 font-medium text-ink">
+        {value}
+      </strong>
     </>
   );
 }
@@ -56,7 +59,11 @@ function ContactOptions() {
   useReveal(sectionRef, "[data-reveal]", { y: 30, stagger: 0.08 });
 
   return (
-    <section ref={sectionRef} aria-labelledby="contact-heading" className="page-width-small section-space">
+    <section
+      ref={sectionRef}
+      aria-labelledby="contact-heading"
+      className="page-width-small section-space"
+    >
       <div className="text-center">
         <p data-reveal className="label">
           {contactIntro.label}

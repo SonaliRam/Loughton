@@ -1,6 +1,5 @@
 // wording comes from the content document: the "how to book" cards, the new patients note and the location section
 export const contactIntro = {
-  label: "Contact",
   title: "Contact Us",
   text: "No referral is required to book an appointment at Loughton Private GP. We welcome new patients of all ages. If you are unsure which appointment type is right for you, please do not hesitate to contact us and we will be glad to help.",
 };

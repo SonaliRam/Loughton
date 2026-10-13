@@ -65,18 +65,46 @@ function FaqList() {
   return (
     <section ref={sectionRef} aria-labelledby="faq-heading" className="page-width-small section-space">
       <div className="text-center">
-        <p data-reveal className="label">
-          FAQs
-        </p>
         <h1 id="faq-heading" data-reveal className="mt-4">
           Frequently Asked Questions
         </h1>
+
+        {/* mobile: one dropdown instead of the buttons */}
+        <div data-reveal className="relative mx-auto mt-8 max-w-[24rem] text-left md:hidden">
+          <label htmlFor="faq-category" className="sr-only">
+            Question categories
+          </label>
+          <select
+            id="faq-category"
+            value={category}
+            onChange={(event) => setCategory(event.target.value)}
+            className="form-control cursor-pointer !bg-white text-ui"
+          >
+            {tabs.map((tab) => (
+              <option key={tab.id} value={tab.id}>
+                {tab.label}
+              </option>
+            ))}
+          </select>
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-tan"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </div>
 
         <div
           data-reveal
           role="group"
           aria-label="Question categories"
-          className="mt-8 flex flex-wrap justify-center gap-2.5"
+          className="mt-8 hidden flex-wrap justify-center gap-2.5 md:flex"
         >
           {tabs.map((tab) => (
             <button
