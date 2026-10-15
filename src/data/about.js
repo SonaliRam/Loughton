@@ -3,7 +3,7 @@ export const aboutBanner = {
   title: "Private healthcare rooted in community, driven by purpose.",
   // add the video path here, for example "/about-banner.mp4" with the file saved in the public folder
   // dummy video for now, replace it with the real file
-  video: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+  video: "",
   // optional image shown while the video loads, for example "/about-banner.jpg"
   poster: "",
 };

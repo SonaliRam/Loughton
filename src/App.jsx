@@ -9,7 +9,7 @@ import Faq from "./pages/Faq";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ComplaintsProcedure from "./pages/ComplaintsProcedure";
-
+import NotFound from "./pages/NotFound";
 function App() {
   return (
     <Routes>
@@ -23,6 +23,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="complaints-procedure" element={<ComplaintsProcedure />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
