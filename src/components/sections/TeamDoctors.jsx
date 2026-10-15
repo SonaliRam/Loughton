@@ -33,7 +33,6 @@ function TeamDoctors() {
   const sectionRef = useRef(null);
   const stackRef = useRef(null);
   const profileRef = useRef(null);
-  const slidingRef = useRef(false);
   const firstRender = useRef(true);
   const lastActive = useRef(0);
   const [active, setActive] = useState(0);

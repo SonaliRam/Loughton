@@ -33,7 +33,6 @@ function AboutStatement({ id, content, flip = false, tones }) {
 
       tl.from("[data-statement-title]", { y: 30, opacity: 0, duration: 0.8 })
         .from("[data-statement-word]", { y: 14, opacity: 0, duration: 0.6, stagger: 0.025 }, "-=0.4")
-        .from("[data-statement-line]", { scaleX: 0, duration: 1, ease: "power2.inOut" }, "<")
         // the large image wipes in from its own side and settles from a slight zoom
         .from(
           "[data-statement-big]",
@@ -70,7 +69,6 @@ function AboutStatement({ id, content, flip = false, tones }) {
               </Fragment>
             ))}
           </p>
-       
         </div>
 
         <div className={`relative aspect-[7/6] w-full lg:col-span-7 ${flip ? "lg:order-1 lg:col-start-1" : ""}`}>

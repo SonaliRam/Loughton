@@ -1,11 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
-import { siteInfo } from "../../data/site";
 import Button from "../ui/Button";
-import { InstagramIcon, MailIcon, PhoneIcon } from "../ui/Icons";
-
-const iconLinkClass =
-  "flex items-center justify-center text-white transition-transform duration-300 hover:scale-110 focus-visible:scale-110";
 
 function Hero() {
   const sectionRef = useRef(null);
@@ -19,12 +14,7 @@ function Hero() {
       tl.from("[data-hero='bg']", { scale: 1.08, duration: 1.8, ease: "power2.out" }, 0)
         .from("[data-hero='heading']", { y: 40, opacity: 0, duration: 0.9 }, 0.15)
         .from("[data-hero='text']", { y: 24, opacity: 0, duration: 0.8 }, 0.45)
-        .from("[data-hero='cta']", { y: 20, opacity: 0, duration: 0.7, stagger: 0.12 }, 0.7)
-        .from(
-          "[data-hero='social-item']",
-          { x: 20, opacity: 0, duration: 0.6, stagger: 0.1 },
-          0.9
-        );
+        .from("[data-hero='cta']", { y: 20, opacity: 0, duration: 0.7, stagger: 0.12 }, 0.7);
     });
 
     return () => mm.revert();
@@ -79,31 +69,6 @@ function Hero() {
           </Button>
         </div>
       </div>
-
-      <ul
-        data-hero="social"
-        className="absolute right-4 top-1/2 hidden -translate-y-1/2 flex-col gap-8 md:flex xl:right-10 xl:gap-9"
-      >
-        {/* <li data-hero="social-item">
-          <a href={siteInfo.phoneLink} aria-label="Call us" className={iconLinkClass}>
-            <PhoneIcon className="w-7 xl:w-8" />
-          </a>
-        </li> */}
-        {/* <li data-hero="social-item">
-          <a href={`mailto:${siteInfo.email}`} aria-label="Email us" className={iconLinkClass}>
-            <MailIcon className="w-8 xl:w-[2.3125rem]" />
-          </a>
-        </li> */}
-        {/* <li data-hero="social-item">
-          <a
-            href="#"
-            aria-label="Instagram"
-            className={iconLinkClass}
-          >
-            <InstagramIcon className="w-7 xl:w-[2.0625rem]" />
-          </a>
-        </li> */}
-      </ul>
     </section>
   );
 }

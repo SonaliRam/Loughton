@@ -19,19 +19,10 @@ function Arrow({ direction }) {
 // how long the cards rest before each move, in milliseconds, the two values take turns
 const AUTO_DELAYS = [2000, 3000];
 
-function PauseIcon({ playing }) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-      {playing ? <path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" /> : <path d="M8 5v14l11-7z" />}
-    </svg>
-  );
-}
-
 function AboutValues() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const [active, setActive] = useState(0);
-  const [stopped, setStopped] = useState(false);
   const [held, setHeld] = useState(false);
   const [visible, setVisible] = useState(false);
   const { label, title, text, items } = aboutValues;
@@ -75,7 +66,7 @@ function AboutValues() {
   // the row rests, moves one card, rests again, and goes back to the first card after the last one
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (stopped || held || !visible || reduced) return undefined;
+    if (held || !visible || reduced) return undefined;
 
     let turn = 0;
     let timer;
@@ -93,7 +84,7 @@ function AboutValues() {
 
     tick();
     return () => clearTimeout(timer);
-  }, [stopped, held, visible]);
+  }, [held, visible]);
 
   const move = (direction) => {
     trackRef.current.scrollBy({ left: direction * getStep(), behavior: "smooth" });
