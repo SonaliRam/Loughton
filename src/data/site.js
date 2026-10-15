@@ -23,13 +23,15 @@ export const navLinks = [
 
 export const footerLinks = [
   { label: "About Us", to: "/about" },
+  { label: "Our Team", to: "/our-team" },
+  { label: "Booking", to: "/booking" },
   { label: "Contact", to: "/contact" },
   { label: "FAQs", to: "/faqs" },
 ];
 
 // placeholder profile links, replace with the real URLs
 export const socialLinks = [
-  { label: "Instagram", url: "#" },
+  { label: "Instagram", url: "https://www.instagram.com/loughtonprivategp" },
   { label: "LinkedIn", url: "#" },
   { label: "Facebook", url: "#" },
 ];
