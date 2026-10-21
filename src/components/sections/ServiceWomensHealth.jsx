@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import { womensHealth } from "../../data/servicePage";
+import ImageSize from "../ui/ImageSize";
 
 // service 04: image in the middle, text on either side
 function ServiceWomensHealth() {
@@ -131,9 +132,7 @@ function ServiceWomensHealth() {
               data-womens="image"
               className="relative aspect-[3/4] w-full overflow-hidden rounded-box border border-tan bg-cream"
             >
-              <span aria-hidden="true" className="label absolute inset-0 grid place-items-center text-tan/70">
-                Image
-              </span>
+              <ImageSize sizes={[{ device: "All devices", size: "780 × 1040 px" }]} />
             </div>
           </div>
 

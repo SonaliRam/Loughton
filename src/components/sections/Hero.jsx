@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import Button from "../ui/Button";
+import ImageSize from "../ui/ImageSize";
 
 function Hero() {
   const sectionRef = useRef(null);
@@ -35,6 +36,14 @@ function Hero() {
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-linear-to-r from-white via-white/70 to-transparent md:from-white/90 md:via-white/40"
+      />
+      <ImageSize
+        corner
+        sizes={[
+          { device: "Mobile", size: "900 × 1200 px" },
+          { device: "Tablet", size: "2048 × 1240 px", className: "hidden md:block" },
+          { device: "Laptop & desktop", size: "2560 × 1000 px", className: "hidden md:block" },
+        ]}
       />
 
       <div className="page-width-small py-14 md:py-20">

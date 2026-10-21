@@ -1,4 +1,8 @@
 // the images are colour blocks for now, replace the empty "image" with a photo path such as "/team-intro.jpg" when it arrives
+import drGursharan from "../assets/images/dr-gursharan-rai.webp";
+import drMansimran from "../assets/images/dr-mansimran-cheema.webp";
+import drSamrath from "../assets/images/dr-samrath-cheema.webp";
+
 export const teamIntro = {
   title: "Three local GPs. One shared commitment to your health.",
   text: "Our clinical team brings together decades of combined NHS and private practice experience, advanced specialist training, and above all, a genuine passion for knowing and caring for our patients as individuals.",
@@ -13,6 +17,8 @@ export const teamDoctors = {
   items: [
     {
       name: "Dr Gursharan K Rai",
+      image: drGursharan,
+      imageAlt: "Portrait of Dr Gursharan K Rai at Loughton Private GP",
       role: "GP Founder",
       tags: ["Nutrition", "Lifestyle medicine", "Menopause care"],
       credentials: "MBChB (University of Manchester, 2012) · MRCGP (2019) · Diploma in Nutrition (Sano, 2022) · Certificate in Menopause Care (BMS)",
@@ -26,6 +32,8 @@ export const teamDoctors = {
     },
     {
       name: "Dr Mansimran Cheema",
+      image: drMansimran,
+      imageAlt: "Portrait of Dr Mansimran Cheema at Loughton Private GP",
       role: "GP Founder",
       tags: ["Endocrinology", "Weight management", "Men's health"],
       credentials: "",
@@ -38,6 +46,8 @@ export const teamDoctors = {
     },
     {
       name: "Dr Samrath Singh Cheema",
+      image: drSamrath,
+      imageAlt: "Portrait of Dr Samrath Singh Cheema at Loughton Private GP",
       role: "GP Partner",
       tags: ["Family medicine", "Paediatrics", "Preventative health"],
       credentials: "Medical Faculty, Masaryk University, Brno · GMC No. 7090835",

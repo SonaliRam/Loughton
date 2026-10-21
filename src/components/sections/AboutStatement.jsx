@@ -1,15 +1,16 @@
 import { Fragment, useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
+import ImageSize from "../ui/ImageSize";
 
 // a colour block that stands in for a photo until the real photos arrive
-function Block({ tone, className, ...rest }) {
+function Block({ tone, className, sizes, ...rest }) {
   return (
     <div aria-hidden="true" className={`absolute overflow-hidden rounded-box ${className}`} {...rest}>
       <div
         data-statement-inner
-        className={`grid h-full w-full place-items-center text-xs uppercase tracking-[0.22em] ${tone}`}
+        className={`relative grid h-full w-full place-items-center text-xs uppercase tracking-[0.22em] ${tone}`}
       >
-        Image
+        {sizes ? <ImageSize sizes={sizes} /> : "Image"}
       </div>
     </div>
   );
@@ -80,11 +81,13 @@ function AboutStatement({ id, content, flip = false, tones }) {
           <Block
             data-statement-big
             tone={tones.big}
+            sizes={[{ device: "All devices", size: "1220 × 1315 px" }]}
             className={`top-0 z-10 h-[78%] w-[62%] ${flip ? "left-[6%]" : "right-[6%]"}`}
           />
           <Block
             data-statement-small
             tone={tones.small}
+            sizes={[{ device: "All devices", size: "940 × 805 px" }]}
             className={`bottom-0 z-20 h-[48%] w-[48%] ${flip ? "right-0" : "left-0"}`}
           />
         </div>

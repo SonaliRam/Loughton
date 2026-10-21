@@ -3,6 +3,7 @@ import { gsap } from "../../lib/gsap";
 import Button from "../ui/Button";
 import { serviceCta } from "../../data/servicePage";
 import { siteInfo } from "../../data/site";
+import ImageSize from "../ui/ImageSize";
 
 const rowClass = "grid grid-cols-[4.5rem_1fr] items-baseline gap-4";
 
@@ -101,9 +102,7 @@ function ServiceCta() {
           {media ? (
             <img src={media} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
           ) : (
-            <span aria-hidden="true" className="label absolute inset-0 grid place-items-center text-tan/70">
-              GIF
-            </span>
+            <ImageSize sizes={[{ device: "All devices (GIF)", size: "920 × 1150 px" }]} />
           )}
         </div>
       </div>

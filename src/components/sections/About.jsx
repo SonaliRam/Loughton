@@ -13,7 +13,11 @@ function About() {
     const mm = gsap.matchMedia(sectionRef.current);
 
     mm.add("(prefers-reduced-motion: no-preference)", () => {
-      const trigger = { trigger: "[data-about='image']", start: "top 85%", once: true };
+      const trigger = {
+        trigger: "[data-about='image']",
+        start: "top 85%",
+        once: true,
+      };
 
       gsap.from("[data-about='image']", {
         clipPath: "inset(0% 0% 100% 0%)",
@@ -64,7 +68,11 @@ function About() {
           data-about="image"
           className="group aspect-[5/3] overflow-hidden rounded-box"
         >
-          <ImagePlaceholder className="transition-transform duration-700 ease-out group-hover:scale-105" />
+          <ImagePlaceholder
+            src={about.image}
+            alt={about.imageAlt}
+            className="transition-transform duration-700 ease-out group-hover:scale-105"
+          />
         </div>
       </div>
     </section>

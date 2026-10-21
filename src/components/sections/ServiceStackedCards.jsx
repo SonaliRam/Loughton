@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import { chronicDisease } from "../../data/servicePage";
+import ImageSize from "../ui/ImageSize";
 
 // service 07: cards stack on top of each other on the left, the text stays pinned on the right
 function ServiceStackedCards() {
@@ -116,9 +117,12 @@ function ServiceStackedCards() {
             >
               <div className="relative aspect-video w-full overflow-hidden rounded-box border border-tan bg-cream lg:aspect-square">
                 <div data-stack="zoom" className="absolute inset-0 grid place-items-center">
-                  <span aria-hidden="true" className="label text-tan/70">
-                    Image
-                  </span>
+                  <ImageSize
+                    sizes={[
+                      { device: "Mobile & tablet", size: "1280 × 720 px" },
+                      { device: "Desktop", size: "800 × 800 px" },
+                    ]}
+                  />
                 </div>
               </div>
 

@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import Button from "../ui/Button";
+import ImageSize from "../ui/ImageSize";
 
 function ServicesBanner() {
   const sectionRef = useRef(null);
@@ -48,6 +49,14 @@ function ServicesBanner() {
         data-banner="bg"
         aria-hidden="true"
         className="absolute inset-x-0 -top-[12%] -z-10 h-[124%] bg-cream will-change-transform"
+      />
+      <ImageSize
+        corner
+        sizes={[
+          { device: "Mobile", size: "900 × 2100 px" },
+          { device: "Tablet (portrait)", size: "1600 × 2400 px" },
+          { device: "Laptop & desktop", size: "2560 × 1600 px" },
+        ]}
       />
 
       <div data-banner="content" className="page-width-small py-14">

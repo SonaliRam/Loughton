@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "./Icons";
 import ImagePlaceholder from "./ImagePlaceholder";
+import ImageSize from "./ImageSize";
 
 function ServiceCard({ title, price, text, image, to = "/services", isCopy = false }) {
   return (
@@ -8,7 +9,8 @@ function ServiceCard({ title, price, text, image, to = "/services", isCopy = fal
       data-card
       className="group flex h-full flex-col overflow-hidden rounded-box border border-tan/40 bg-white transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:border-tan hover:shadow-[0_18px_36px_-16px_rgba(176,159,137,0.65)] motion-reduce:transition-none xl:min-h-[31.25rem]"
     >
-      <div className="aspect-[16/7] overflow-hidden">
+      <div className="relative aspect-[16/7] overflow-hidden">
+        {image ? null : <ImageSize sizes={[{ device: "All devices", size: "920 × 400 px" }]} />}
         <div data-card-image className="h-full w-full">
           <ImagePlaceholder
             src={image}

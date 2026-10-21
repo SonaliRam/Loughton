@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import { bloodTests } from "../../data/servicePage";
+import ImageSize from "../ui/ImageSize";
 
 const iconProps = {
   viewBox: "0 0 52 52",
@@ -168,9 +169,12 @@ function ServiceBloodTests() {
           data-blood="wide"
           className="relative mt-12 aspect-[16/10] w-full overflow-hidden rounded-box border border-tan bg-cream md:aspect-[16/8] xl:max-h-[calc(100svh-7.9375rem)]"
         >
-          <span aria-hidden="true" className="label absolute inset-0 grid place-items-center text-tan/70">
-            Image
-          </span>
+          <ImageSize
+            sizes={[
+              { device: "Mobile", size: "800 × 500 px" },
+              { device: "Tablet & desktop", size: "2560 × 1280 px" },
+            ]}
+          />
         </div>
 
         <div data-blood="stats" className="mt-12 grid md:grid-cols-3 md:gap-10">

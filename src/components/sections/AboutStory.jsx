@@ -1,9 +1,10 @@
 import { useLayoutEffect, useRef } from "react";
 import { aboutStory } from "../../data/about";
 import { gsap } from "../../lib/gsap";
+import ImageSize from "../ui/ImageSize";
 
 // a colour block that stands in for a photo, "reveal" is the side the image wipes in from
-function StoryImage({ tone, reveal, className = "", drift }) {
+function StoryImage({ tone, reveal, className = "", drift, sizes }) {
   return (
     <div
       aria-hidden="true"
@@ -12,8 +13,8 @@ function StoryImage({ tone, reveal, className = "", drift }) {
       data-drift={drift}
       className={`overflow-hidden rounded-box ${className}`}
     >
-      <div data-story-image-inner className={`grid h-full w-full place-items-center text-xs uppercase tracking-[0.22em] ${tone}`}>
-        Image
+      <div data-story-image-inner className={`relative h-full w-full ${tone}`}>
+        <ImageSize sizes={sizes} />
       </div>
     </div>
   );
@@ -132,15 +133,16 @@ function AboutStory() {
             <StoryImage
               reveal="right"
               tone="bg-tan text-white/80"
+              sizes={[{ device: "Mobile & tablet", size: "1600 × 1200 px" }, { device: "Desktop", size: "1600 × 900 px" }]}
               className="mt-4 aspect-[4/3] rounded-none md:mt-6 lg:col-span-5 lg:col-start-8 lg:mt-0 lg:aspect-auto lg:min-h-[24rem]"
             />
           </div>
 
           {/* row 2: large image with a small one on top of its corner and the text card across its edge */}
           <div className="flex flex-col gap-4 px-5 md:px-10 lg:relative lg:block lg:aspect-[1440/640] lg:px-0">
-            <StoryImage reveal="left" tone="bg-[#8d7d68] text-white/80" className="aspect-[4/3] lg:absolute lg:left-[24%] lg:top-0 lg:z-10 lg:aspect-auto lg:h-[90%] lg:w-[34%]" />
+            <StoryImage reveal="left" tone="bg-[#8d7d68] text-white/80" sizes={[{ device: "Mobile & tablet", size: "1400 × 1050 px" }, { device: "Desktop", size: "1300 × 1530 px" }]} className="aspect-[4/3] lg:absolute lg:left-[24%] lg:top-0 lg:z-10 lg:aspect-auto lg:h-[90%] lg:w-[34%]" />
             <div className="grid grid-cols-2 gap-4 lg:contents">
-              <StoryImage reveal="up" drift="-40" tone="bg-cream text-tan" className="aspect-[4/3] lg:absolute lg:bottom-0 lg:left-[12%] lg:z-20 lg:aspect-auto lg:h-[55%] lg:w-[20%]" />
+              <StoryImage reveal="up" drift="-40" tone="bg-cream text-tan" sizes={[{ device: "Mobile & tablet", size: "680 × 510 px" }, { device: "Desktop", size: "770 × 940 px" }]} className="aspect-[4/3] lg:absolute lg:bottom-0 lg:left-[12%] lg:z-20 lg:aspect-auto lg:h-[55%] lg:w-[20%]" />
             </div>
             <p data-story-card="right" className={`${cardClass} border border-tan lg:left-[55%] lg:top-[16%] lg:w-[33%]`}>
               {paragraphs[1]}
@@ -149,10 +151,10 @@ function AboutStory() {
 
           {/* row 3: text card on the left, large image with two small ones along its bottom */}
           <div className="flex flex-col gap-4 px-5 md:px-10 lg:relative lg:block lg:aspect-[1440/700] lg:px-0">
-            <StoryImage reveal="right" tone="bg-[#231e1b] text-white/70" className="aspect-[4/3] lg:absolute lg:left-[38%] lg:top-0 lg:z-10 lg:aspect-auto lg:h-[78%] lg:w-[36%]" />
+            <StoryImage reveal="right" tone="bg-[#231e1b] text-white/70" sizes={[{ device: "Mobile & tablet", size: "1400 × 1050 px" }, { device: "Desktop", size: "1380 × 1460 px" }]} className="aspect-[4/3] lg:absolute lg:left-[38%] lg:top-0 lg:z-10 lg:aspect-auto lg:h-[78%] lg:w-[36%]" />
             <div className="grid grid-cols-2 gap-4 lg:contents">
-              <StoryImage reveal="up" drift="-50" tone="bg-tan text-white/80" className="aspect-[4/3] lg:absolute lg:bottom-0 lg:left-[44%] lg:z-20 lg:aspect-auto lg:h-[34%] lg:w-[22%]" />
-              <StoryImage reveal="up" drift="-30" tone="bg-cream text-tan" className="aspect-[4/3] lg:absolute lg:bottom-0 lg:left-[70%] lg:z-20 lg:aspect-auto lg:h-[34%] lg:w-[20%]" />
+              <StoryImage reveal="up" drift="-50" tone="bg-tan text-white/80" sizes={[{ device: "All devices", size: "860 × 645 px" }]} className="aspect-[4/3] lg:absolute lg:bottom-0 lg:left-[44%] lg:z-20 lg:aspect-auto lg:h-[34%] lg:w-[22%]" />
+              <StoryImage reveal="up" drift="-30" tone="bg-cream text-tan" sizes={[{ device: "All devices", size: "860 × 645 px" }]} className="aspect-[4/3] lg:absolute lg:bottom-0 lg:left-[70%] lg:z-20 lg:aspect-auto lg:h-[34%] lg:w-[20%]" />
             </div>
             <p data-story-card="left" className={`${cardClass} border border-tan lg:left-[8%] lg:top-[6%] lg:w-[34%]`}>
               {paragraphs[2]}

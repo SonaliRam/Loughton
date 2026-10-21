@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { aboutValues } from "../../data/about";
 import { gsap } from "../../lib/gsap";
+import ImageSize from "../ui/ImageSize";
 
 // colour blocks stand in for the photos until the real images arrive
 const tones = ["bg-tan text-white/80", "bg-[#8d7d68] text-white/80", "bg-[#cfc3b3] text-[#6b5d4b]"];
@@ -133,9 +134,9 @@ function AboutValues() {
                 >
                   <div
                     aria-hidden="true"
-                    className={`grid h-44 shrink-0 place-items-center text-xs uppercase tracking-[0.22em] lg:h-[13rem] ${tones[index % tones.length]}`}
+                    className={`relative h-44 shrink-0 lg:h-[13rem] ${tones[index % tones.length]}`}
                   >
-                    Image
+                    <ImageSize sizes={[{ device: "All devices", size: "700 × 440 px" }]} />
                   </div>
                   <div className="flex flex-1 flex-col gap-3 p-6 lg:p-7">
                     <h3 className="text-ink">{item.title}</h3>

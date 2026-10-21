@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import ImagePlaceholder from "../ui/ImagePlaceholder";
+import ImageSize from "../ui/ImageSize";
 
 // one service: an image on one side and the text on the other. flip puts the text first
 function ServiceSplit({ service }) {
@@ -123,14 +124,7 @@ function ServiceSplit({ service }) {
                 {image ? <ImagePlaceholder src={image} alt="" /> : null}
               </div>
             </div>
-            {image ? null : (
-              <span
-                aria-hidden="true"
-                className="label absolute inset-0 grid place-items-center text-tan/70"
-              >
-                Image
-              </span>
-            )}
+            {image ? null : <ImageSize sizes={[{ device: "All devices", size: "1140 × 1425 px" }]} />}
           </div>
         </div>
 

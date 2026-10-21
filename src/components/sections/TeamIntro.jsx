@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { teamIntro } from "../../data/team";
 import { gsap } from "../../lib/gsap";
+import ImageSize from "../ui/ImageSize";
 
 // a colour block that stands in for a photo until the real photo arrives
 function Block({ tone, className, children, ...rest }) {
@@ -8,7 +9,7 @@ function Block({ tone, className, children, ...rest }) {
     <div className={`absolute overflow-hidden rounded-box ${className}`} {...rest}>
       <div
         data-team-inner
-        className={`grid h-full w-full place-items-center text-xs uppercase tracking-[0.22em] ${tone}`}
+        className={`relative grid h-full w-full place-items-center text-xs uppercase tracking-[0.22em] ${tone}`}
       >
         {children}
       </div>
@@ -93,7 +94,7 @@ function TeamIntro() {
             <img data-team-big src={image} alt="" className="absolute left-[8%] top-0 z-10 h-[92%] w-[92%] rounded-box object-cover" />
           ) : (
             <Block data-team-big tone="bg-tan text-white/80" className="left-[8%] top-0 z-10 h-[92%] w-[92%]">
-              Image
+              <ImageSize sizes={[{ device: "All devices", size: "1200 × 1200 px" }]} />
             </Block>
           )}
         </div>

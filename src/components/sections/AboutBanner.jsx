@@ -41,8 +41,8 @@ function AboutBanner() {
     <section
       ref={sectionRef}
       aria-labelledby="about-heading"
-      // the bottom padding equals the sticky header height, so the text sits in the middle of the visible banner
-      className="relative isolate flex h-[100svh] min-h-[26rem] items-center justify-center overflow-hidden bg-[#231e1b] pb-20 md:pb-24 xl:pb-[7.9375rem]"
+      // the bottom padding is twice the sticky header height, so the text sits in the middle of the screen
+      className="relative isolate flex h-[100svh] min-h-[26rem] items-center justify-center overflow-hidden bg-[#231e1b] pb-40 md:pb-48 xl:pb-[15.875rem]"
     >
       <div data-banner-media aria-hidden="true" className="absolute inset-x-0 -top-1/2 -z-20 h-[150%] will-change-transform">
         {video ? (
@@ -56,13 +56,16 @@ function AboutBanner() {
             playsInline
             preload="metadata"
           />
+        ) : poster ? (
+          // the photo fills the lower three quarters of the moving layer, so the doctors' faces stay in view
+          <img className="absolute inset-x-0 bottom-0 h-3/4 w-full object-cover object-[30%_50%]" src={poster} alt="" fetchPriority="high" decoding="async" />
         ) : (
           // placeholder until the real video is added, the stripes and glows make the parallax easy to see
           <div className="h-full w-full bg-[radial-gradient(circle_at_20%_30%,rgba(176,159,137,0.9),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(176,159,137,0.7),transparent_45%),repeating-linear-gradient(135deg,rgba(255,255,255,0.12)_0_2px,transparent_2px_90px),linear-gradient(160deg,#4a3f36,#231e1b)]" />
         )}
       </div>
 
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/50" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/0" />
 
       <div data-banner-content className="page-width-small text-center">
         <p data-banner-text className="label !text-white/80">

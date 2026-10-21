@@ -2,6 +2,7 @@ import { Fragment, useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import Button from "../ui/Button";
 import { aboutCta } from "../../data/about";
+import ImageSize from "../ui/ImageSize";
 
 // closing section of the About page, same look as the services closing section: text on the left, an image on the right
 function AboutCta() {
@@ -88,9 +89,7 @@ function AboutCta() {
           {media ? (
             <img src={media} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
           ) : (
-            <span aria-hidden="true" className="label absolute inset-0 grid place-items-center text-tan/70">
-              Image
-            </span>
+            <ImageSize sizes={[{ device: "All devices", size: "920 × 1150 px" }]} />
           )}
         </div>
       </div>

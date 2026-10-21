@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import { teleconsultations } from "../../data/servicePage";
+import ImageSize from "../ui/ImageSize";
 
 // service 08: dark section, text on the left and a rectangle image that rises and straightens
 function ServiceTeleconsultations() {
@@ -107,9 +108,7 @@ function ServiceTeleconsultations() {
           data-tele="image"
           className="service-image"
         >
-          <span aria-hidden="true" className="label absolute inset-0 grid place-items-center text-tan/70">
-            Image
-          </span>
+          <ImageSize sizes={[{ device: "All devices", size: "920 × 1150 px" }]} />
         </div>
       </div>
     </section>

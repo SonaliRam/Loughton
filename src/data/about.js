@@ -1,11 +1,12 @@
+import aboutPoster from "../assets/images/about-banner-poster.webp";
+
 export const aboutBanner = {
   label: "About Loughton Private GP",
   title: "Private healthcare rooted in community, driven by purpose.",
   // add the video path here, for example "/about-banner.mp4" with the file saved in the public folder
-  // dummy video for now, replace it with the real file
   video: "",
-  // optional image shown while the video loads, for example "/about-banner.jpg"
-  poster: "",
+  // image shown while the video loads, and on its own until the video is added
+  poster: aboutPoster,
 };
 
 // the images are colour blocks for now, replace "image" with a photo path such as "/story-1.jpg" when the photos arrive

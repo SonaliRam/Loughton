@@ -143,7 +143,7 @@ function TeamDoctors() {
                   aria-label={index === active ? `Open the profile of ${item.name}` : `Show ${item.name}`}
                   className="absolute left-0 top-0 h-full w-[62%] cursor-pointer overflow-hidden rounded-box focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink lg:left-[2%] lg:w-[58%]"
                 >
-                  <span className={`grid h-full w-full place-items-center text-xs uppercase tracking-[0.22em] ${item.tone}`}>Image</span>
+                  <img src={item.image} alt="" loading="lazy" decoding="async" width="900" height="1349" className={`h-full w-full object-cover object-[50%_20%] ${item.tone}`} />
                   {/* a white layer that fades the portraits waiting behind the front one */}
                   <span data-doc-veil className="absolute inset-0 bg-white opacity-0" />
                 </button>
@@ -204,8 +204,8 @@ function TeamDoctors() {
             </button>
 
             <div className="mt-5 grid overflow-hidden rounded-box lg:grid-cols-[0.8fr_1.2fr]">
-              <div data-profile-photo className={`grid min-h-[22rem] place-items-center text-xs uppercase tracking-[0.22em] lg:min-h-[26rem] ${doctor.tone}`}>
-                Image
+              <div data-profile-photo className={`relative min-h-[22rem] lg:min-h-[26rem] ${doctor.tone}`}>
+                <img src={doctor.image} alt={doctor.imageAlt} decoding="async" width="900" height="1349" className="absolute inset-0 h-full w-full object-cover object-[50%_15%]" />
               </div>
 
               <div data-profile-item className="bg-[#d9cfc2] p-6 md:p-10 xl:p-14">
