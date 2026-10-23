@@ -36,6 +36,10 @@ function ServiceStackedCards() {
         },
       });
 
+    });
+
+    // card stacking only on desktop; mobile & tablet use a horizontal swipe row
+    mm.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", () => {
       const items = gsap.utils.toArray("[data-stack='card']");
 
       items.forEach((card, index) => {
@@ -128,21 +132,19 @@ function ServiceStackedCards() {
           </ul>
         </div>
 
-        <div className="relative lg:order-1">
+        <div className="relative -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:-mx-10 md:px-10 lg:mx-0 lg:block lg:overflow-visible lg:px-0 lg:pb-0 lg:order-1">
           {cards.map((card, index) => (
             <article
               key={card.number}
               data-stack="card"
               style={{ "--i": index }}
-              className="sticky top-[calc(76px+var(--i)*14px)] mb-[4vh] last:mb-0 grid origin-top gap-5 rounded-box border border-tan/50 bg-white p-6 shadow-[0_24px_56px_rgba(42,37,34,0.1)] lg:top-[calc(100px+var(--i)*22px)] lg:grid-cols-[1fr_1.1fr] lg:items-center lg:p-7"
+              className="grid w-[85%] shrink-0 snap-start origin-top content-start gap-5 rounded-box border border-tan/50 bg-white p-6 shadow-[0_12px_32px_rgba(42,37,34,0.08)] md:w-[80%] md:grid-cols-[310px_1fr] md:items-center lg:sticky lg:top-[calc(100px+var(--i)*22px)] lg:mb-[4vh] lg:w-auto lg:grid-cols-[1fr_1.1fr] lg:p-7 lg:shadow-[0_24px_56px_rgba(42,37,34,0.1)] lg:last:mb-0"
             >
-              <div className="relative aspect-video w-full overflow-hidden rounded-box border border-tan bg-cream lg:aspect-square">
+              <div className="relative mx-auto aspect-square w-full max-w-[310px] overflow-hidden rounded-box border border-tan bg-cream">
                 <div data-stack="zoom" className="absolute inset-0">
                   {card.image ? (
                     <img
                       src={card.image}
-                      srcSet={`${card.mobileImage || card.image} 1280w, ${card.image} 800w`}
-                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 100vw, 50vw"
                       alt=""
                       loading="lazy"
                       className="h-full w-full object-cover object-center"
@@ -150,8 +152,7 @@ function ServiceStackedCards() {
                   ) : (
                     <ImageSize
                       sizes={[
-                        { device: "Mobile & tablet", size: "1280 × 720 px" },
-                        { device: "Desktop", size: "800 × 800 px" },
+                        { device: "All devices", size: "310 × 310 px" },
                       ]}
                     />
                   )}
