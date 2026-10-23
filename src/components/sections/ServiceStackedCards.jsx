@@ -28,7 +28,12 @@ function ServiceStackedCards() {
         autoAlpha: 0,
         y: 30,
         ease: "none",
-        scrollTrigger: { trigger: "[data-stack='lead']", start: "top 92%", end: "top 70%", scrub: true },
+        scrollTrigger: {
+          trigger: "[data-stack='lead']",
+          start: "top 92%",
+          end: "top 70%",
+          scrub: true,
+        },
       });
 
       const items = gsap.utils.toArray("[data-stack='card']");
@@ -40,13 +45,23 @@ function ServiceStackedCards() {
           autoAlpha: 0,
           rotate: index % 2 ? 2 : -2,
           ease: "none",
-          scrollTrigger: { trigger: card, start: "top 98%", end: "top 70%", scrub: true },
+          scrollTrigger: {
+            trigger: card,
+            start: "top 98%",
+            end: "top 70%",
+            scrub: true,
+          },
         });
 
         // when the next card arrives, this one shrinks back and its image zooms
         const next = items[index + 1];
         if (next) {
-          const settle = { trigger: next, start: "top 80%", end: "top 25%", scrub: true };
+          const settle = {
+            trigger: next,
+            start: "top 80%",
+            end: "top 25%",
+            scrub: true,
+          };
 
           gsap.to(card, {
             scale: 0.92 - (items.length - index) * 0.005,
@@ -79,7 +94,10 @@ function ServiceStackedCards() {
 
           <h2 id={`${id}-heading`} data-stack="title">
             {title.split(" ").map((word, index) => (
-              <span key={`${word}-${index}`} className="inline-block overflow-hidden align-bottom">
+              <span
+                key={`${word}-${index}`}
+                className="inline-block overflow-hidden align-bottom"
+              >
                 <span data-stack="word" className="inline-block">
                   {word}
                   {" "}
@@ -100,7 +118,10 @@ function ServiceStackedCards() {
 
           <ul className="mt-7 flex flex-wrap gap-2">
             {chips.map((chip) => (
-              <li key={chip} className="rounded-box border border-tan/60 px-3.5 py-1 text-small text-muted">
+              <li
+                key={chip}
+                className="rounded-box border border-tan/60 px-3.5 py-1 text-small text-muted"
+              >
                 {chip}
               </li>
             ))}
@@ -116,13 +137,24 @@ function ServiceStackedCards() {
               className="sticky top-[calc(76px+var(--i)*14px)] mb-[4vh] last:mb-0 grid origin-top gap-5 rounded-box border border-tan/50 bg-white p-6 shadow-[0_24px_56px_rgba(42,37,34,0.1)] lg:top-[calc(100px+var(--i)*22px)] lg:grid-cols-[1fr_1.1fr] lg:items-center lg:p-7"
             >
               <div className="relative aspect-video w-full overflow-hidden rounded-box border border-tan bg-cream lg:aspect-square">
-                <div data-stack="zoom" className="absolute inset-0 grid place-items-center">
-                  <ImageSize
-                    sizes={[
-                      { device: "Mobile & tablet", size: "1280 × 720 px" },
-                      { device: "Desktop", size: "800 × 800 px" },
-                    ]}
-                  />
+                <div data-stack="zoom" className="absolute inset-0">
+                  {card.image ? (
+                    <img
+                      src={card.image}
+                      srcSet={`${card.mobileImage || card.image} 1280w, ${card.image} 800w`}
+                      sizes="(max-width: 767px) 100vw, (max-width: 1023px) 100vw, 50vw"
+                      alt=""
+                      loading="lazy"
+                      className="h-full w-full object-cover object-center"
+                    />
+                  ) : (
+                    <ImageSize
+                      sizes={[
+                        { device: "Mobile & tablet", size: "1280 × 720 px" },
+                        { device: "Desktop", size: "800 × 800 px" },
+                      ]}
+                    />
+                  )}
                 </div>
               </div>
 

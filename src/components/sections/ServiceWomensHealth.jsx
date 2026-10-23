@@ -1,11 +1,12 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import { womensHealth } from "../../data/servicePage";
+import ImagePlaceholder from "../ui/ImagePlaceholder";
 import ImageSize from "../ui/ImageSize";
 
 // service 04: image in the middle, text on either side
 function ServiceWomensHealth() {
-  const { id, number, title, pill, left, right, chips } = womensHealth;
+  const { id, number, title, pill, left, right, chips, image } = womensHealth;
   const sectionRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -132,7 +133,7 @@ function ServiceWomensHealth() {
               data-womens="image"
               className="relative aspect-[3/4] w-full overflow-hidden rounded-box border border-tan bg-cream"
             >
-              <ImageSize sizes={[{ device: "All devices", size: "780 × 1040 px" }]} />
+              {image ? <ImagePlaceholder src={image} alt="" className="object-cover" /> : <ImageSize sizes={[{ device: "All devices", size: "780 × 1040 px" }]} />}
             </div>
           </div>
 

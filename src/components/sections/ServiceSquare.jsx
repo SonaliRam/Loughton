@@ -1,10 +1,11 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
+import ImagePlaceholder from "../ui/ImagePlaceholder";
 import ImageSize from "../ui/ImageSize";
 
 // an image that opens from a small rounded shape as it scrolls in. flip puts the image on the left
 function ServiceSquare({ service, flip = false }) {
-  const { id, number, title, pill, paragraphs, chips } = service;
+  const { id, number, title, pill, paragraphs, chips, image } = service;
   const sectionRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -111,7 +112,7 @@ function ServiceSquare({ service, flip = false }) {
           className={`service-image ${flip ? "order-first" : ""}`}
         >
           <div data-ear="inner" className="absolute inset-0 grid place-items-center">
-            <ImageSize sizes={[{ device: "All devices", size: "920 × 1150 px" }]} />
+            {image ? <ImagePlaceholder src={image} alt="" className="object-cover" /> : <ImageSize sizes={[{ device: "All devices", size: "920 × 1150 px" }]} />}
           </div>
         </div>
       </div>

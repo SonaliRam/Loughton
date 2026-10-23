@@ -1,11 +1,13 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import { teleconsultations } from "../../data/servicePage";
+import ImagePlaceholder from "../ui/ImagePlaceholder";
 import ImageSize from "../ui/ImageSize";
 
 // service 08: dark section, text on the left and a rectangle image that rises and straightens
 function ServiceTeleconsultations() {
-  const { id, number, title, pill, paragraphs, chips } = teleconsultations;
+  const { id, number, title, pill, paragraphs, chips, image } =
+    teleconsultations;
   const sectionRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -13,8 +15,10 @@ function ServiceTeleconsultations() {
 
     mm.add(
       {
-        desktop: "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
-        mobile: "(max-width: 767px) and (prefers-reduced-motion: no-preference)",
+        desktop:
+          "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
+        mobile:
+          "(max-width: 767px) and (prefers-reduced-motion: no-preference)",
       },
       (context) => {
         const { desktop } = context.conditions;
@@ -36,7 +40,12 @@ function ServiceTeleconsultations() {
           y: 30,
           ease: "none",
           stagger: 0.2,
-          scrollTrigger: { trigger: "[data-tele='body']", start: "top 92%", end: "top 55%", scrub: true },
+          scrollTrigger: {
+            trigger: "[data-tele='body']",
+            start: "top 92%",
+            end: "top 55%",
+            scrub: true,
+          },
         });
 
         gsap.fromTo(
@@ -47,10 +56,15 @@ function ServiceTeleconsultations() {
             rotate: 0,
             scale: 1,
             ease: "none",
-            scrollTrigger: { trigger: "[data-tele='image']", start: "top 95%", end: "top 40%", scrub: true },
-          }
+            scrollTrigger: {
+              trigger: "[data-tele='image']",
+              start: "top 95%",
+              end: "top 40%",
+              scrub: true,
+            },
+          },
         );
-      }
+      },
     );
 
     return () => mm.revert();
@@ -69,7 +83,10 @@ function ServiceTeleconsultations() {
 
           <h2 id={`${id}-heading`} data-tele="title" className="!text-white">
             {title.split(" ").map((word, index) => (
-              <span key={`${word}-${index}`} className="inline-block overflow-hidden align-bottom">
+              <span
+                key={`${word}-${index}`}
+                className="inline-block overflow-hidden align-bottom"
+              >
                 <span data-tele="word" className="inline-block">
                   {word}
                   {" "}
@@ -86,7 +103,11 @@ function ServiceTeleconsultations() {
 
           <div data-tele="body" className="mt-7 space-y-4">
             {paragraphs.map((text) => (
-              <p key={text.slice(0, 24)} data-tele="text" className="!text-[#c9bdad]">
+              <p
+                key={text.slice(0, 24)}
+                data-tele="text"
+                className="!text-[#c9bdad]"
+              >
                 {text}
               </p>
             ))}
@@ -104,11 +125,14 @@ function ServiceTeleconsultations() {
           </ul>
         </div>
 
-        <div
-          data-tele="image"
-          className="service-image"
-        >
-          <ImageSize sizes={[{ device: "All devices", size: "920 × 1150 px" }]} />
+        <div data-tele="image" className="service-image">
+          {image ? (
+            <ImagePlaceholder src={image} alt="" className="object-cover" />
+          ) : (
+            <ImageSize
+              sizes={[{ device: "All devices", size: "920 × 1150 px" }]}
+            />
+          )}
         </div>
       </div>
     </section>

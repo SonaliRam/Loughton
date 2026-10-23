@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import { bloodTests } from "../../data/servicePage";
+import ImagePlaceholder from "../ui/ImagePlaceholder";
 import ImageSize from "../ui/ImageSize";
 
 const iconProps = {
@@ -16,8 +17,21 @@ const iconProps = {
 
 // service 03: light layout with a text row, a wide image and three facts that draw themselves in
 function ServiceBloodTests() {
-  const { id, number, title, pill, paragraphs, priceFrom, priceTo, priceText, reviewText, diagnosticsText, chips } =
-    bloodTests;
+  const {
+    id,
+    number,
+    title,
+    pill,
+    paragraphs,
+    priceFrom,
+    priceTo,
+    priceText,
+    reviewText,
+    diagnosticsText,
+    chips,
+    image,
+    mobileImage,
+  } = bloodTests;
   const sectionRef = useRef(null);
   const fromRef = useRef(null);
   const toRef = useRef(null);
@@ -169,12 +183,21 @@ function ServiceBloodTests() {
           data-blood="wide"
           className="relative mt-12 aspect-[16/10] w-full overflow-hidden rounded-box border border-tan bg-cream md:aspect-[16/8] xl:max-h-[calc(100svh-7.9375rem)]"
         >
-          <ImageSize
-            sizes={[
-              { device: "Mobile", size: "800 × 500 px" },
-              { device: "Tablet & desktop", size: "2560 × 1280 px" },
-            ]}
+          <img
+            src={image}
+            srcSet={`${mobileImage} 800w, ${image} 2560w`}
+            alt=""
+            loading="lazy"
+            className="h-full w-full object-cover"
           />
+          {!image ? (
+            <ImageSize
+              sizes={[
+                { device: "Mobile", size: "800 × 500 px" },
+                { device: "Tablet & desktop", size: "2560 × 1280 px" },
+              ]}
+            />
+          ) : null}
         </div>
 
         <div data-blood="stats" className="mt-12 grid md:grid-cols-3 md:gap-10">

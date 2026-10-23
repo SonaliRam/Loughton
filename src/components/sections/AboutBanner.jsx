@@ -1,10 +1,20 @@
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { aboutBanner } from "../../data/about";
 import { gsap } from "../../lib/gsap";
 
 function AboutBanner() {
   const sectionRef = useRef(null);
-  const { label, title, video, poster } = aboutBanner;
+  const { label, title, video: videoDesktop, videoMobile, poster } = aboutBanner;
+
+  // only the video for the current screen is loaded, phones get the vertical one
+  const [isDesktop, setIsDesktop] = useState(() => window.matchMedia("(min-width: 768px)").matches);
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 768px)");
+    const update = () => setIsDesktop(query.matches);
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+  const video = isDesktop ? videoDesktop : videoMobile || videoDesktop;
 
   useLayoutEffect(() => {
     const mm = gsap.matchMedia(sectionRef.current);
@@ -27,7 +37,8 @@ function AboutBanner() {
         };
 
         // the video scrolls much slower than the page, so it looks far behind the text
-        gsap.to("[data-banner-media]", { yPercent: desktop ? 33.3 : 26, ease: "none", scrollTrigger: scroll });
+        // (skipped for the video, which is shown in full and stays in place)
+        if (!video) gsap.to("[data-banner-media]", { yPercent: desktop ? 33.3 : 26, ease: "none", scrollTrigger: scroll });
 
         // the text moves faster than the page and fades out
         gsap.to("[data-banner-content]", { y: desktop ? -200 : -120, opacity: 0, ease: "none", scrollTrigger: scroll });
@@ -35,19 +46,23 @@ function AboutBanner() {
     );
 
     return () => mm.revert();
-  }, []);
+  }, [video]);
 
   return (
     <section
       ref={sectionRef}
       aria-labelledby="about-heading"
       // the bottom padding is twice the sticky header height, so the text sits in the middle of the screen
-      className="relative isolate flex h-[100svh] min-h-[26rem] items-center justify-center overflow-hidden bg-[#231e1b] pb-40 md:pb-48 xl:pb-[15.875rem]"
+      className={`relative isolate flex min-h-[26rem] items-center justify-center overflow-hidden bg-[#231e1b] pb-40 md:pb-48 xl:pb-[15.875rem] ${
+        // the banner takes the shape of the video (16:9 on desktop, 9:16 on phones) so nothing is cropped
+        video ? `w-full ${isDesktop || !videoMobile ? "aspect-video" : "aspect-[9/16]"}` : "h-[100svh]"
+      }`}
     >
-      <div data-banner-media aria-hidden="true" className="absolute inset-x-0 -top-1/2 -z-20 h-[150%] will-change-transform">
+      <div data-banner-media aria-hidden="true" className={`absolute inset-x-0 -z-20 will-change-transform ${video ? "inset-y-0" : "-top-1/2 h-[150%]"}`}>
         {video ? (
           <video
-            className="h-full w-full object-cover"
+            key={video}
+            className="h-full w-full object-contain"
             src={video}
             poster={poster || undefined}
             autoPlay
@@ -65,7 +80,7 @@ function AboutBanner() {
         )}
       </div>
 
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/0" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-black/10" />
 
       <div data-banner-content className="page-width-small text-center">
         <p data-banner-text className="label !text-white/80">

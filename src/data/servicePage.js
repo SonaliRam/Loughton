@@ -1,3 +1,17 @@
+import gpConsultationsPageImage from "../assets/images/service-page-GP Consultations.webp";
+import preventiveHealthPageImage from "../assets/images/service-page-Preventive Health Checks.webp";
+import bloodTestsMobileImage from "../assets/images/service-page-Mobile 800 × 500 px Blood Tests & Investigations.webp";
+import bloodTestsDesktopImage from "../assets/images/service-page-Tablet & desktop 2560 × 1280 px Blood Tests & Investigations.webp";
+import womensHealthPageImage from "../assets/images/service-page-780 × 1040 px -Womens Health.webp";
+import weightManagementPageImage from "../assets/images/service-page-Weight Management1140X1425.webp";
+import teleconsultationsPageImage from "../assets/images/service-page-All devices 920 × 1150 px copy_Teleconsultations.webp";
+import earWaxRemoval from "../assets/images/service-page-920 × 1150 px copy Ear Wax Removal .webp";
+import chronicDiseaseDesktop1 from "../assets/images/service-page-Chronic Disease Management Desktop 800 × 800 px_1 (1).webp";
+import chronicDiseaseDesktop2 from "../assets/images/service-page-Chronic Disease Management Desktop 800 × 800 px_2.webp";
+import chronicDiseaseDesktop3 from "../assets/images/service-page-Chronic Disease Management Desktop 800 × 800 px_3.webp";
+import chronicDiseaseMobile1 from "../assets/images/service-page-Mobile & tablet 1280 × 720 px_1Chronic Disease Management ha (1).webp";
+import chronicDiseaseMobile2 from "../assets/images/service-page-Mobile & tablet 1280 × 720 px_2Chronic Disease Management.webp";
+import chronicDiseaseMobile3 from "../assets/images/service-page-Mobile & tablet 1280 × 720 px_3 Chronic Disease Management.webp";
 // every service on the Services page; the id is used for the anchor links from the home page cards
 export const serviceTicker = [
   "GP Consultations",
@@ -21,8 +35,13 @@ export const serviceSplits = [
       "Whether it’s a new symptom, an ongoing concern, or something you simply haven’t had time to get checked, our GP consultations give you the space to be properly heard. Your doctor will take a full history, examine you thoroughly, and talk you through next steps in plain, unhurried terms, no 10-minute clock running in the background.",
       "You’ll leave with a clear plan, whether that’s a prescription, a referral, further tests, or simply reassurance. And because continuity of care matters to us, you can choose to see the same GP at every visit, so your doctor builds a real picture of your health over time.",
     ],
-    chips: ["30-minute new consultations", "20-minute follow-ups", "Same-day access where possible"],
+    chips: [
+      "30-minute new consultations",
+      "20-minute follow-ups",
+      "Same-day access where possible",
+    ],
     flip: false,
+    image: gpConsultationsPageImage,
   },
   {
     id: "preventive-health-checks",
@@ -34,8 +53,13 @@ export const serviceSplits = [
       "Your initial consultation covers a detailed history and examination, with bloods and further checks arranged as needed. At your follow-up, your GP will talk you through the results and agree a personalised plan with you, whether that’s lifestyle changes, ongoing monitoring, or referral for specialist input.",
       "We recommend these checks not just for those with existing concerns, but as a proactive step for anyone wanting genuine peace of mind about their health. Many issues, from raised cholesterol to early signs of hypertension, show no symptoms at all until they’ve progressed, which is exactly why a structured, unhurried check matters.",
     ],
-    chips: ["Prevention-first approach", "Lifestyle review", "Personalised health plan"],
+    chips: [
+      "Prevention-first approach",
+      "Lifestyle review",
+      "Personalised health plan",
+    ],
     flip: true,
+    image: preventiveHealthPageImage,
   },
   {
     id: "weight-management",
@@ -48,8 +72,13 @@ export const serviceSplits = [
       "At your follow-up, your GP will review your results and agree a structured, personalised plan together, whether that involves lifestyle changes, medical treatment, or a combination of both, with ongoing support as your journey progresses.",
       "We take a whole-person approach rather than focusing on the number on the scale alone, considering factors such as sleep, stress, hormonal health and existing medical conditions that may be affecting your progress. Ongoing follow-up ensures your plan evolves with you, rather than being a one-off intervention.",
     ],
-    chips: ["45-minute consultation", "Blood tests included", "30-minute follow-up"],
+    chips: [
+      "45-minute consultation",
+      "Blood tests included",
+      "30-minute follow-up",
+    ],
     flip: false,
+    image: weightManagementPageImage,
   },
 ];
 
@@ -70,7 +99,13 @@ export const bloodTests = {
     "Every result is reviewed by a doctor, not just flagged as “normal” or “abnormal”, and talked through with you so you understand what it actually means for your health. Where follow-up action is needed, we’ll agree a clear next step together.",
   diagnosticsText:
     "We can also arrange investigations beyond standard bloods, including ECGs and other diagnostics, so that most of your assessment can happen in one place without being passed between different providers. This joined-up approach means fewer delays and a doctor who has the full picture when discussing your results with you.",
-  chips: ["GP-reviewed results", "Fast turnaround", "Venepuncture approx. £30–£40"],
+  chips: [
+    "GP-reviewed results",
+    "Fast turnaround",
+    "Venepuncture approx. £30–£40",
+  ],
+  image: bloodTestsDesktopImage,
+  mobileImage: bloodTestsMobileImage,
 };
 
 export const womensHealth = {
@@ -86,7 +121,12 @@ export const womensHealth = {
     "Dr Rai’s specialist training in menopause care means you can expect an assessment that goes beyond a quick prescription, looking at your full symptom picture, lifestyle, and long-term wellbeing to build a plan that actually works for you.",
     "We also understand that these appointments can feel deeply personal, so our approach is always unhurried, private and led by you. Whether you simply want a second opinion, a longer conversation than a routine appointment allows, or ongoing support through a particular life stage, our GPs are here to listen without judgement.",
   ],
-  chips: ["30-minute appointments", "Compassionate, ongoing care", "45-minute menopause assessments"],
+  chips: [
+    "30-minute appointments",
+    "Compassionate, ongoing care",
+    "45-minute menopause assessments",
+  ],
+  image: womensHealthPageImage,
 };
 
 export const earWax = {
@@ -100,7 +140,12 @@ export const earWax = {
     "If wax is present, removal is typically quick and well-tolerated, and you’ll notice the difference immediately. If microsuction isn’t appropriate on the day, your GP will explain why and advise on the best next steps for your ears.",
     "Left untreated, wax build-up can affect hearing, cause discomfort, or even lead to recurring ear infections, so addressing it promptly and safely matters. Our microsuction approach avoids the risks associated with home syringing or ear candling, giving you a clean, controlled procedure carried out by a qualified clinician.",
   ],
-  chips: ["Initial consultation + examination", "Microsuction", "30-minute appointment"],
+  chips: [
+    "Initial consultation + examination",
+    "Microsuction",
+    "30-minute appointment",
+  ],
+  image: earWaxRemoval,
 };
 
 export const chronicDisease = {
@@ -114,19 +159,29 @@ export const chronicDisease = {
       number: "01",
       title: "More than repeat prescriptions",
       text: "Managing a long term condition well is about more than repeat prescriptions, it’s about a doctor who knows your history and stays ahead of changes in your health.",
+      image: chronicDiseaseDesktop1,
+      mobileImage: chronicDiseaseMobile1,
     },
     {
       number: "02",
       title: "An active, ongoing approach",
       text: "We take an active, ongoing approach, rather than a reactive one. Your GP will work with you to set clear, realistic goals, monitor key markers over time, and adjust your treatment plan as your circumstances change, giving you the confidence that your condition is being properly and consistently managed.",
+      image: chronicDiseaseDesktop2,
+      mobileImage: chronicDiseaseMobile2,
     },
     {
       number: "03",
       title: "The same GP at each review",
       text: "Because you’ll ideally see the same GP at each review, care doesn’t have to start from scratch every time, your doctor already understands your history, your treatment response, and what matters to you. This continuity often makes it easier to catch small changes early, before they become bigger problems.",
+      image: chronicDiseaseDesktop3,
+      mobileImage: chronicDiseaseMobile3,
     },
   ],
-  chips: ["30-minute new consultations", "20-minute follow-ups", "Same-day access where possible"],
+  chips: [
+    "30-minute new consultations",
+    "20-minute follow-ups",
+    "Same-day access where possible",
+  ],
 };
 
 export const teleconsultations = {
@@ -141,6 +196,7 @@ export const teleconsultations = {
     "All remote appointments are conducted through a secure, confidential platform, giving you the same standard of privacy and care as an in-person visit. It’s a particularly convenient option for patients managing busy schedules, ongoing conditions, or those who simply feel more comfortable speaking from a familiar environment.",
   ],
   chips: ["20-minute consultations", "Phone & video", "Ideal for follow-ups"],
+  image: teleconsultationsPageImage,
 };
 
 export const serviceCta = {
