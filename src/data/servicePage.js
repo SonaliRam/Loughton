@@ -9,9 +9,6 @@ import earWaxRemoval from "../assets/images/service-page-920 × 1150 px copy Ear
 import chronicDiseaseDesktop1 from "../assets/images/service-page-Chronic Disease Management Desktop 800 × 800 px_1 (1).webp";
 import chronicDiseaseDesktop2 from "../assets/images/service-page-Chronic Disease Management Desktop 800 × 800 px_2.webp";
 import chronicDiseaseDesktop3 from "../assets/images/service-page-Chronic Disease Management Desktop 800 × 800 px_3.webp";
-import chronicDiseaseMobile1 from "../assets/images/service-page-Mobile & tablet 1280 × 720 px_1Chronic Disease Management ha (1).webp";
-import chronicDiseaseMobile2 from "../assets/images/service-page-Mobile & tablet 1280 × 720 px_2Chronic Disease Management.webp";
-import chronicDiseaseMobile3 from "../assets/images/service-page-Mobile & tablet 1280 × 720 px_3 Chronic Disease Management.webp";
 // every service on the Services page; the id is used for the anchor links from the home page cards
 export const serviceTicker = [
   "GP Consultations",
@@ -160,21 +157,18 @@ export const chronicDisease = {
       title: "More than repeat prescriptions",
       text: "Managing a long term condition well is about more than repeat prescriptions, it’s about a doctor who knows your history and stays ahead of changes in your health.",
       image: chronicDiseaseDesktop1,
-      mobileImage: chronicDiseaseMobile1,
     },
     {
       number: "02",
       title: "An active, ongoing approach",
       text: "We take an active, ongoing approach, rather than a reactive one. Your GP will work with you to set clear, realistic goals, monitor key markers over time, and adjust your treatment plan as your circumstances change, giving you the confidence that your condition is being properly and consistently managed.",
       image: chronicDiseaseDesktop2,
-      mobileImage: chronicDiseaseMobile2,
     },
     {
       number: "03",
       title: "The same GP at each review",
       text: "Because you’ll ideally see the same GP at each review, care doesn’t have to start from scratch every time, your doctor already understands your history, your treatment response, and what matters to you. This continuity often makes it easier to catch small changes early, before they become bigger problems.",
       image: chronicDiseaseDesktop3,
-      mobileImage: chronicDiseaseMobile3,
     },
   ],
   chips: [
@@ -206,5 +200,5 @@ export const serviceCta = {
   button: "Request appointment",
   visit: "110 High Road, Loughton, IG10 4HJ",
   // put the GIF in the public folder and set its path here, for example "/cta.gif"; empty shows a placeholder
-  media: "",
+  media: "/videos/Thinking%20face%20(1).mp4",
 };

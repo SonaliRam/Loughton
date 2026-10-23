@@ -98,8 +98,20 @@ function ServiceCta() {
           </dl>
         </div>
 
-        <div data-cta="media" className="service-image">
-          {media ? (
+        <div data-cta="media" className="service-image gif lg:max-w-[640px] lg:aspect-square">
+          {media && media.endsWith(".mp4") ? (
+            // looping muted video behaves like a GIF but is much lighter
+            <video
+              src={media}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-contain"
+            />
+          ) : media ? (
             <img src={media} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
           ) : (
             <ImageSize sizes={[{ device: "All devices (GIF)", size: "920 × 1150 px" }]} />

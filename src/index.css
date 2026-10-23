@@ -412,8 +412,5 @@
     max-width: 460px;
     aspect-ratio: 4 / 5;
     overflow: hidden;
-    border: 1px solid var(--clr-tan);
-    border-radius: var(--radius-box);
-    background-color: var(--clr-cream);
   }
 }
