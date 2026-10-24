@@ -1,7 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import { bloodTests } from "../../data/servicePage";
-import ImagePlaceholder from "../ui/ImagePlaceholder";
 import ImageSize from "../ui/ImageSize";
 
 const iconProps = {
