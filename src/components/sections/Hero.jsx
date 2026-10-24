@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import Button from "../ui/Button";
 import heroImage from "../../assets/images/homepage-desktop-banner.webp";
+import heroMobileImage from "../../assets/images/home-page-mobile-banner.webp";
 
 function Hero() {
   const sectionRef = useRef(null);
@@ -27,21 +28,25 @@ function Hero() {
       aria-labelledby="hero-heading"
       className="relative isolate flex min-h-[560px] items-center overflow-hidden md:min-h-[540px] lg:min-h-[620px] xl:min-h-[42.5625rem]"
     >
-      <img
-        data-hero="bg"
-        src={heroImage}
-        alt=""
-        aria-hidden="true"
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 -z-20 h-full w-full max-md:object-cover lg:object-cover"
-      />
+      <picture>
+        <source media="(max-width: 767px)" srcSet={heroMobileImage} />
+        <img
+          data-hero="bg"
+          src={heroImage}
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 -z-20 h-full w-full max-md:object-cover max-md:object-top lg:object-cover"
+        />
+      </picture>
+      {/* on mobile the photo fades into cream behind the text, so dark text and buttons stay readable */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-linear-to-r"
+        className="absolute inset-0 -z-10 max-md:bg-linear-to-b max-md:from-transparent max-md:from-15% max-md:via-cream/85 max-md:via-45% max-md:to-cream"
       />
 
-      <div className="page-width-small py-14 md:py-20 md:max-lg:m-0 md:max-lg:w-[66%] lg:m-0 lg:w-[55%]">
+      <div className="page-width-small pt-[60vw] pb-14 sm:pt-[45vw] md:py-20 md:max-lg:m-0 md:max-lg:w-[66%] lg:m-0 lg:w-[55%]">
         <h1 id="hero-heading" data-hero="heading" className="max-w-[40rem]">
           Healthcare <br className="hidden md:inline" />
           that finally has <br className="hidden md:inline" />
@@ -66,7 +71,7 @@ function Hero() {
             to="/booking"
             variant="outline"
             size="lg"
-            className="w-full sm:w-auto"
+            className="w-full sm:w-auto max-md:border-ink max-md:before:bg-ink"
             data-hero="cta"
           >
             Book Appointment
