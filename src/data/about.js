@@ -7,6 +7,7 @@ import story3Mobile from "../assets/images/our-story-3Mobile & tablet 680 × 510
 import story4 from "../assets/images/our-story-4Desktop 1380 × 1460 px.webp";
 import story5Mobile from "../assets/images/our-story-5Mobile & tablet 1400 × 1050 px.webp";
 import storySmall2 from "../assets/images/our-storyAll devices 860 × 645 px_2.webp";
+import storySmall3 from "../assets/images/about-us-3rdrow-rightsideimgAll devices 860 × 645 px copy.webp";
 import missionBig from "../assets/images/mission2All devices 1220 × 1315 px_1.webp";
 import missionSmall from "../assets/images/mission1All devices 940 × 805 px_2.webp";
 import visionBig from "../assets/images/vision1All devices 1220 × 1315 px.webp";
@@ -32,7 +33,7 @@ export const aboutBanner = {
 // images for all three story rows
 export const aboutStory = {
   title: "Our Story",
-  images: { story1, story1Mobile, story2, story2Mobile, story3, story3Mobile, story4, story5Mobile, storySmall2 },
+  images: { story1, story1Mobile, story2, story2Mobile, story3, story3Mobile, story4, story5Mobile, storySmall2, storySmall3 },
   paragraphs: [
     "Loughton Private GP was founded by three experienced local GPs united by a single belief: that outstanding healthcare starts with time. Time to listen. Time to understand. Time to build the kind of trusted, long-term relationships that make a genuine difference to your health.",
     "After years of clinical practice within the NHS, a system we deeply respect and continue to work within, we recognised that the increasing pressures on primary care often make it difficult to deliver the thorough, personalised attention our patients deserve. Short appointment windows and long waiting times are not the fault of any individual clinician; they are the reality of a service under immense strain.",

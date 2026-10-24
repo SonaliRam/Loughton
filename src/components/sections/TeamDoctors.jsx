@@ -1,6 +1,9 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { teamDoctors } from "../../data/team";
 import { gsap } from "../../lib/gsap";
+import ImageSize from "../ui/ImageSize";
+
+const doctorSize = [{ device: "All devices", size: "900 × 1349 px" }];
 
 // where each portrait sits in the stack: 0 is the front one, 1 and 2 peek out from behind it
 const slots = [
@@ -146,7 +149,9 @@ function TeamDoctors() {
                   {item.image ? (
                     <img src={item.image} alt="" loading="lazy" decoding="async" width="900" height="1349" className={`h-full w-full object-cover object-[50%_20%] ${item.tone}`} />
                   ) : (
-                    <span aria-hidden="true" className={`block h-full w-full ${item.tone}`} />
+                    <span aria-hidden="true" className={`block h-full w-full ${item.tone}`}>
+                      <ImageSize sizes={doctorSize} />
+                    </span>
                   )}
                   {/* a white layer that fades the portraits waiting behind the front one */}
                   <span data-doc-veil className="absolute inset-0 bg-white opacity-0" />
@@ -207,14 +212,19 @@ function TeamDoctors() {
               <span aria-hidden="true">←</span> All doctors
             </button>
 
-            <div className="mt-5 grid overflow-hidden rounded-box lg:grid-cols-[0.8fr_1.2fr]">
-              <div data-profile-photo className={`relative min-h-[22rem] lg:min-h-[26rem] ${doctor.tone}`}>
-                {doctor.image && (
-                  <img src={doctor.image} alt={doctor.imageAlt} decoding="async" width="900" height="1349" className="absolute inset-0 h-full w-full object-cover object-[50%_15%]" />
-                )}
+            <div className="mt-5 grid overflow-hidden rounded-box lg:grid-cols-[0.65fr_1.35fr]">
+              <div data-profile-photo className={doctor.tone}>
+                {/* the photo keeps a fixed 2:3 shape on desktop, so a longer bio never crops it */}
+                <div className="relative min-h-[22rem] lg:min-h-0 lg:aspect-[2/3]">
+                  {doctor.image ? (
+                    <img src={doctor.image} alt={doctor.imageAlt} decoding="async" width="900" height="1349" className="absolute inset-0 h-full w-full object-cover object-[50%_15%]" />
+                  ) : (
+                    <ImageSize sizes={doctorSize} />
+                  )}
+                </div>
               </div>
 
-              <div data-profile-item className="bg-[#d9cfc2] p-6 md:p-10 xl:p-14">
+              <div data-profile-item className="bg-[#d9cfc2] p-6 md:p-10 lg:flex lg:flex-col lg:justify-center xl:p-14">
                 <div className="flex flex-col gap-4 ">
                   {doctor.credentials ? (
                     <div className="rounded-box bg-white px-5 py-4">
@@ -223,14 +233,14 @@ function TeamDoctors() {
                     </div>
                   ) : null}
                   {doctor.bio.map((paragraph) => (
-                    <p key={paragraph} className="!text-ink">
+                    <p key={paragraph} className="text-lead !text-ink">
                       {paragraph}
                     </p>
                   ))}
                   {doctor.interests ? (
                     <div className="rounded-box bg-[#231e1b] px-5 py-4">
                       <p className="label !text-cream">Special interests</p>
-                      <p className="mt-1 !text-white">{doctor.interests}</p>
+                      <p className="text-lead mt-1 !text-white">{doctor.interests}</p>
                     </div>
                   ) : null}
                 </div>
