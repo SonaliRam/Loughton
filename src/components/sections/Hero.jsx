@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import Button from "../ui/Button";
-import ImageSize from "../ui/ImageSize";
+import heroImage from "../../assets/images/homepage-desktop-banner.webp";
 
 function Hero() {
   const sectionRef = useRef(null);
@@ -25,28 +25,23 @@ function Hero() {
     <section
       ref={sectionRef}
       aria-labelledby="hero-heading"
-      className="relative isolate flex min-h-[560px] items-center overflow-hidden md:min-h-[620px] xl:min-h-[42.5625rem]"
+      className="relative isolate flex min-h-[560px] items-center overflow-hidden md:min-h-[540px] lg:min-h-[620px] xl:min-h-[42.5625rem]"
     >
-      {/* placeholder background, replace with the hero image */}
-      <div
+      <img
         data-hero="bg"
+        src={heroImage}
+        alt=""
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-linear-to-r from-cream via-cream to-tan"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 -z-20 h-full w-full max-md:object-cover lg:object-cover"
       />
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-linear-to-r from-white via-white/70 to-transparent md:from-white/90 md:via-white/40"
       />
-      <ImageSize
-        corner
-        sizes={[
-          { device: "Mobile", size: "900 × 1200 px" },
-          { device: "Tablet", size: "2048 × 1240 px", className: "hidden md:block" },
-          { device: "Laptop & desktop", size: "2560 × 1000 px", className: "hidden md:block" },
-        ]}
-      />
 
-      <div className="page-width-small py-14 md:py-20">
+      <div className="page-width-small py-14 md:py-20 md:max-lg:m-0 md:max-lg:w-[66%] lg:m-0 lg:w-[55%]">
         <h1 id="hero-heading" data-hero="heading" className="max-w-[40rem]">
           Healthcare <br className="hidden md:inline" />
           that finally has <br className="hidden md:inline" />

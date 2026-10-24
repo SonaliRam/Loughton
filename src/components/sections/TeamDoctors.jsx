@@ -212,10 +212,10 @@ function TeamDoctors() {
               <span aria-hidden="true">←</span> All doctors
             </button>
 
-            <div className="mt-5 grid overflow-hidden rounded-box lg:grid-cols-[0.65fr_1.35fr]">
+            <div className="mt-5 grid gap-[10px] overflow-hidden rounded-box lg:grid-cols-[0.65fr_1.35fr]">
               <div data-profile-photo className={doctor.tone}>
                 {/* the photo keeps a fixed 2:3 shape on desktop, so a longer bio never crops it */}
-                <div className="relative min-h-[22rem] lg:min-h-0 lg:aspect-[2/3]">
+                <div className="relative h-full min-h-[22rem] lg:min-h-0 lg:aspect-[2/3]">
                   {doctor.image ? (
                     <img src={doctor.image} alt={doctor.imageAlt} decoding="async" width="900" height="1349" className="absolute inset-0 h-full w-full object-cover object-[50%_15%]" />
                   ) : (

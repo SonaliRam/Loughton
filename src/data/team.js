@@ -1,4 +1,8 @@
-// the images are colour blocks for now, replace the empty "image" with a photo path such as "/team-intro.jpg" when it arrives
+import gursharanImage from "../assets/images/900 x 1349_our_Dr. Gursharan Rai.webp";
+import mansimranImage from "../assets/images/900 x 1349_our Doctors_Dr. Mansimran Cheema.webp";
+import samrathImage from "../assets/images/900 x 1349_our _Dr. Samrath Cheema.webp";
+
+// the intro image is a colour block for now, replace the empty "image" with a photo path such as "/team-intro.jpg" when it arrives
 
 export const teamIntro = {
   title: "Three local GPs. One shared commitment to your health.",
@@ -14,7 +18,7 @@ export const teamDoctors = {
   items: [
     {
       name: "Dr Gursharan K Rai",
-      image: "",
+      image: gursharanImage,
       imageAlt: "Portrait of Dr Gursharan K Rai at Loughton Private GP",
       role: "GP Founder",
       tags: ["Nutrition", "Lifestyle medicine", "Menopause care"],
@@ -29,7 +33,7 @@ export const teamDoctors = {
     },
     {
       name: "Dr Mansimran Cheema",
-      image: "",
+      image: mansimranImage,
       imageAlt: "Portrait of Dr Mansimran Cheema at Loughton Private GP",
       role: "GP Founder",
       tags: ["Endocrinology", "Weight management", "Men's health"],
@@ -43,7 +47,7 @@ export const teamDoctors = {
     },
     {
       name: "Dr Samrath Singh Cheema",
-      image: "",
+      image: samrathImage,
       imageAlt: "Portrait of Dr Samrath Singh Cheema at Loughton Private GP",
       role: "GP Partner",
       tags: ["Family medicine", "Paediatrics", "Preventative health"],
