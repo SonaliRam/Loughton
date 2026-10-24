@@ -3,7 +3,7 @@ import { gsap } from "../../lib/gsap";
 import { about } from "../../data/home";
 import useReveal from "../../hooks/useReveal";
 import ImagePlaceholder from "../ui/ImagePlaceholder";
-import ImageSize from "../ui/ImageSize";
+import aboutImage from "../../assets/images/homepage-aboutus-image.webp";
 
 function About() {
   const sectionRef = useRef(null);
@@ -69,8 +69,11 @@ function About() {
           data-about="image"
           className="group relative aspect-[5/3] overflow-hidden rounded-box"
         >
-          <ImagePlaceholder className="transition-transform duration-700 ease-out group-hover:scale-105" />
-          <ImageSize sizes={[{ device: "All devices", size: "1000 × 600 px" }]} />
+          <ImagePlaceholder
+            src={aboutImage}
+            alt=""
+            className="transition-transform duration-700 ease-out group-hover:scale-105"
+          />
         </div>
       </div>
     </section>
