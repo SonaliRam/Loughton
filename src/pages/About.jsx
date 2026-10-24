@@ -4,11 +4,11 @@ import AboutStatement from "../components/sections/AboutStatement";
 import AboutStory from "../components/sections/AboutStory";
 import AboutValues from "../components/sections/AboutValues";
 import { aboutMission, aboutVision } from "../data/about";
-
+import Hero from "../components/sections/Hero";
 function About() {
   return (
     <>
-      <AboutBanner />
+      <Hero />
       <AboutStory />
       <AboutStatement
         id="vision-heading"
