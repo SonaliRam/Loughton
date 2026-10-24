@@ -1,4 +1,3 @@
-import gpConsultationsPageImage from "../assets/images/service-page-GP Consultations.webp";
 import preventiveHealthPageImage from "../assets/images/service-page-Preventive Health Checks.webp";
 import bloodTestsMobileImage from "../assets/images/service-page-Mobile 800 × 500 px Blood Tests & Investigations.webp";
 import bloodTestsDesktopImage from "../assets/images/service-page-Tablet & desktop 2560 × 1280 px Blood Tests & Investigations.webp";
@@ -38,7 +37,7 @@ export const serviceSplits = [
       "Same-day access where possible",
     ],
     flip: false,
-    image: gpConsultationsPageImage,
+    image: "",
   },
   {
     id: "preventive-health-checks",

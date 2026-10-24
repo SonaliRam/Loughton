@@ -1,5 +1,5 @@
 import AboutBanner from "../components/sections/AboutBanner";
-import AboutCta from "../components/sections/AboutCta";
+import ServiceCta from "../components/sections/ServiceCta";
 import AboutStatement from "../components/sections/AboutStatement";
 import AboutStory from "../components/sections/AboutStory";
 import AboutValues from "../components/sections/AboutValues";
@@ -25,7 +25,7 @@ function About() {
         }}
       />
       <AboutValues />
-      <AboutCta />
+      <ServiceCta />
     </>
   );
 }

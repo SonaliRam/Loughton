@@ -164,7 +164,7 @@ function AboutStory() {
             <StoryImage reveal="right" tone="bg-[#231e1b] text-white/70" image={images.story4} mobileImage={images.story5Mobile} sizes={[{ device: "Mobile & tablet", size: "1400 × 1050 px" }, { device: "Desktop", size: "1380 × 1460 px" }]} className="aspect-[4/3] lg:absolute lg:left-[38%] lg:top-0 lg:z-10 lg:aspect-auto lg:h-[78%] lg:w-[36%]" />
             <div className="grid grid-cols-2 gap-4 lg:contents">
               <StoryImage reveal="up" drift="-50" tone="bg-tan text-white/80" image={images.storySmall2} sizes={[{ device: "All devices", size: "860 × 645 px" }]} className="aspect-[4/3] lg:absolute lg:bottom-0 lg:left-[44%] lg:z-20 lg:aspect-auto lg:h-[34%] lg:w-[22%]" />
-              <StoryImage reveal="up" drift="-30" tone="bg-cream text-tan" image={images.storySmall1} sizes={[{ device: "All devices", size: "860 × 645 px" }]} className="aspect-[4/3] lg:absolute lg:bottom-0 lg:left-[70%] lg:z-20 lg:aspect-auto lg:h-[34%] lg:w-[20%]" />
+              <StoryImage reveal="up" drift="-30" tone="bg-cream text-tan" sizes={[{ device: "All devices", size: "860 × 645 px" }]} className="aspect-[4/3] lg:absolute lg:bottom-0 lg:left-[70%] lg:z-20 lg:aspect-auto lg:h-[34%] lg:w-[20%]" />
             </div>
             <p data-story-card="left" className={`${cardClass} border border-tan lg:left-[8%] lg:top-[38%] lg:w-[34%]`}>
               {paragraphs[2]}

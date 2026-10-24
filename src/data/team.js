@@ -1,7 +1,4 @@
 // the images are colour blocks for now, replace the empty "image" with a photo path such as "/team-intro.jpg" when it arrives
-import drGursharan from "../assets/images/dr-gursharan-rai.webp";
-import drMansimran from "../assets/images/dr-mansimran-cheema.webp";
-import drSamrath from "../assets/images/dr-samrath-cheema.webp";
 
 export const teamIntro = {
   title: "Three local GPs. One shared commitment to your health.",
@@ -17,7 +14,7 @@ export const teamDoctors = {
   items: [
     {
       name: "Dr Gursharan K Rai",
-      image: drGursharan,
+      image: "",
       imageAlt: "Portrait of Dr Gursharan K Rai at Loughton Private GP",
       role: "GP Founder",
       tags: ["Nutrition", "Lifestyle medicine", "Menopause care"],
@@ -32,7 +29,7 @@ export const teamDoctors = {
     },
     {
       name: "Dr Mansimran Cheema",
-      image: drMansimran,
+      image: "",
       imageAlt: "Portrait of Dr Mansimran Cheema at Loughton Private GP",
       role: "GP Founder",
       tags: ["Endocrinology", "Weight management", "Men's health"],
@@ -46,7 +43,7 @@ export const teamDoctors = {
     },
     {
       name: "Dr Samrath Singh Cheema",
-      image: drSamrath,
+      image: "",
       imageAlt: "Portrait of Dr Samrath Singh Cheema at Loughton Private GP",
       role: "GP Partner",
       tags: ["Family medicine", "Paediatrics", "Preventative health"],

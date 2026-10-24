@@ -1,4 +1,3 @@
-import aboutPoster from "../assets/images/about-banner-poster.webp";
 import story1 from "../assets/images/our-story-1Desktop 1600 × 900 px_Our Story.webp";
 import story1Mobile from "../assets/images/our-story-1Mobile & tablet 1600 × 1200 px_our story.webp";
 import story2 from "../assets/images/our-story-2Desktop 1300 × 1530 px copy.webp";
@@ -7,7 +6,6 @@ import story3 from "../assets/images/our-story-3Desktop 770 × 940 px.webp";
 import story3Mobile from "../assets/images/our-story-3Mobile & tablet 680 × 510 px.webp";
 import story4 from "../assets/images/our-story-4Desktop 1380 × 1460 px.webp";
 import story5Mobile from "../assets/images/our-story-5Mobile & tablet 1400 × 1050 px.webp";
-import storySmall1 from "../assets/images/our--storyAll devices 860 × 645 px.webp";
 import storySmall2 from "../assets/images/our-storyAll devices 860 × 645 px_2.webp";
 import missionBig from "../assets/images/mission2All devices 1220 × 1315 px_1.webp";
 import missionSmall from "../assets/images/mission1All devices 940 × 805 px_2.webp";
@@ -28,13 +26,13 @@ export const aboutBanner = {
   // the vertical (9:16) version, used on phones
   videoMobile: "/videos/Loughton%20Vertical%20Banner.mp4",
   // image shown while the video loads, and on its own until the video is added
-  poster: aboutPoster,
+  poster: "",
 };
 
 // images for all three story rows
 export const aboutStory = {
   title: "Our Story",
-  images: { story1, story1Mobile, story2, story2Mobile, story3, story3Mobile, story4, story5Mobile, storySmall1, storySmall2 },
+  images: { story1, story1Mobile, story2, story2Mobile, story3, story3Mobile, story4, story5Mobile, storySmall2 },
   paragraphs: [
     "Loughton Private GP was founded by three experienced local GPs united by a single belief: that outstanding healthcare starts with time. Time to listen. Time to understand. Time to build the kind of trusted, long-term relationships that make a genuine difference to your health.",
     "After years of clinical practice within the NHS, a system we deeply respect and continue to work within, we recognised that the increasing pressures on primary care often make it difficult to deliver the thorough, personalised attention our patients deserve. Short appointment windows and long waiting times are not the fault of any individual clinician; they are the reality of a service under immense strain.",
@@ -68,12 +66,3 @@ export const aboutValues = {
   ],
 };
 
-// the heading is written for the page, the paragraph and the button text come from the content document
-export const aboutCta = {
-  eyebrow: "Loughton High Road",
-  title: "Here for every stage of your journey",
-  text: "We are proud to be based on Loughton High Road, visible, accessible, and genuinely part of the community we serve. Whether you are a busy professional, a parent managing a family's health, or someone looking to take a more proactive approach to your wellbeing, we are here for every stage of your journey.",
-  button: "Book your first appointment →",
-  // dummy for now, replace with a photo path such as "/about-cta.jpg"
-  media: "",
-};
