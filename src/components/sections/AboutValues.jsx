@@ -136,7 +136,11 @@ function AboutValues() {
                     aria-hidden="true"
                     className={`relative h-44 shrink-0 lg:h-[13rem] ${tones[index % tones.length]}`}
                   >
-                    <ImageSize sizes={[{ device: "All devices", size: "700 × 440 px" }]} />
+                    {item.image ? (
+                      <img src={item.image} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                    ) : (
+                      <ImageSize sizes={[{ device: "All devices", size: "700 × 440 px" }]} />
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col gap-3 p-6 lg:p-7">
                     <h3 className="text-ink">{item.title}</h3>
