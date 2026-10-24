@@ -6,7 +6,7 @@ import {
   LockIcon,
   ShieldIcon,
 } from "../components/ui/Icons";
-import aboutImage from "../assets/images/home-sec-section.webp";
+
 export const featureStrip = [
   { icon: CalendarIcon, label: "Same-day appointments" },
   { icon: ClockIcon, label: "Extended consultations" },
@@ -17,8 +17,6 @@ export const featureStrip = [
 export const about = {
   label: "About Loughton Private GP",
   heading: "Where personalised care meets modern general practice.",
-  image: aboutImage,
-  imageAlt: "Inside the Loughton Private GP clinic",
   paragraphs: [
     "At Loughton Private GP, we believe that great medicine begins with a conversation, one where you feel heard, understood, and respected.",
     "Situated on the High Road in the heart of our community, our clinic brings together three experienced local GPs, offering longer appointments and more time to discuss your health alongside the care available through the NHS.",

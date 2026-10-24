@@ -38,7 +38,7 @@ function Hero() {
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-linear-to-r from-white via-white/70 to-transparent md:from-white/90 md:via-white/40"
+        className="absolute inset-0 -z-10 bg-linear-to-r"
       />
 
       <div className="page-width-small py-14 md:py-20 md:max-lg:m-0 md:max-lg:w-[66%] lg:m-0 lg:w-[55%]">
