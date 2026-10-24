@@ -49,7 +49,7 @@ function ServiceCta() {
       ref={sectionRef}
       id="book"
       aria-labelledby="service-cta-heading"
-      className="overflow-clip bg-tan py-20 xl:py-32"
+      className="overflow-clip bg-tan service-cta-sec"
     >
       <div className="page-width-small grid items-center gap-12 md:grid-cols-2 md:gap-16 xl:gap-24">
         <div>

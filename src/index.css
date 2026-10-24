@@ -413,4 +413,17 @@
     aspect-ratio: 4 / 5;
     overflow: hidden;
   }
+  @media (max-width: 767px) {
+    .service-cta-sec {
+      padding-top: 3rem;
+      padding-bottom: 0rem;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .service-cta-sec {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
 }

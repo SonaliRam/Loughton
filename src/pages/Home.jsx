@@ -5,7 +5,7 @@ import WhyChooseUs from "../components/sections/WhyChooseUs";
 import Services from "../components/sections/Services";
 import MoreServices from "../components/sections/MoreServices";
 import Reviews from "../components/sections/Reviews";
-
+import ServiceCta from "../components/sections/ServiceCta";
 function Home() {
   return (
     <>
@@ -16,6 +16,7 @@ function Home() {
       <Services />
       <MoreServices />
       <Reviews />
+      <ServiceCta />
     </>
   );
 }
