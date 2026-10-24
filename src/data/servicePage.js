@@ -8,6 +8,7 @@ import earWaxRemoval from "../assets/images/service-page-920 × 1150 px copy Ear
 import chronicDiseaseDesktop1 from "../assets/images/service-page-Chronic Disease Management Desktop 800 × 800 px_1 (1).webp";
 import chronicDiseaseDesktop2 from "../assets/images/service-page-Chronic Disease Management Desktop 800 × 800 px_2.webp";
 import chronicDiseaseDesktop3 from "../assets/images/service-page-Chronic Disease Management Desktop 800 × 800 px_3.webp";
+import gpConsultationsPageImage from "../assets/images/service-page-gp-consultation1140 x 1425 copy.webp";
 // every service on the Services page; the id is used for the anchor links from the home page cards
 export const serviceTicker = [
   "GP Consultations",
@@ -37,7 +38,7 @@ export const serviceSplits = [
       "Same-day access where possible",
     ],
     flip: false,
-    image: "",
+    image: gpConsultationsPageImage,
   },
   {
     id: "preventive-health-checks",
