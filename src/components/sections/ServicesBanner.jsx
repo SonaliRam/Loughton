@@ -1,7 +1,9 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import Button from "../ui/Button";
-import ImageSize from "../ui/ImageSize";
+import bannerImage from "../../assets/images/service-page-banner.webp";
+import bannerTablet from "../../assets/images/service-page-banner-tablet.webp";
+import bannerMobile from "../../assets/images/service-page-banner-mobile-new.webp";
 
 function ServicesBanner() {
   const sectionRef = useRef(null);
@@ -16,15 +18,12 @@ function ServicesBanner() {
         .from("[data-banner='text']", { y: 24, opacity: 0, duration: 0.8 }, 0.4)
         .from("[data-banner='cta']", { y: 20, opacity: 0, duration: 0.7, stagger: 0.12 }, 0.6);
 
-      // parallax: the image block moves slower than the page
       const scroll = {
         trigger: sectionRef.current,
         start: "top top",
         end: "bottom top",
         scrub: true,
       };
-
-      gsap.fromTo("[data-banner='bg']", { yPercent: -8 }, { yPercent: 8, ease: "none", scrollTrigger: scroll });
 
       // the text lifts away and fades as you scroll
       gsap.to("[data-banner='content']", {
@@ -42,25 +41,28 @@ function ServicesBanner() {
     <section
       ref={sectionRef}
       aria-labelledby="services-banner-heading"
-      className="relative isolate flex h-[calc(100svh-5rem)] min-h-[32rem] items-center overflow-hidden bg-cream md:h-[calc(100svh-6rem)] xl:h-[calc(100svh-7.9375rem)]"
+      className="relative isolate flex flex-col overflow-hidden bg-tan md:flex-row md:items-center md:aspect-[2048/1240] md:min-h-[32rem] md:py-0 lg:aspect-[2560/1000]"
     >
-      {/* placeholder image block, replace with the banner image */}
       <div
         data-banner="bg"
         aria-hidden="true"
-        className="absolute inset-x-0 -top-[12%] -z-10 h-[124%] bg-cream will-change-transform"
-      />
-      <ImageSize
-        corner
-        sizes={[
-          { device: "Mobile", size: "900 × 2100 px" },
-          { device: "Tablet (portrait)", size: "1600 × 2400 px" },
-          { device: "Laptop & desktop", size: "2560 × 1600 px" },
-        ]}
-      />
+        className="relative aspect-[900/1300] w-full bg-cream md:absolute md:inset-0 md:-z-10 md:aspect-auto"
+      >
+        <picture className="block h-full w-full">
+          {/* mobile image fades into cream at the bottom so the text sits over it; tablet has its own; desktop uses the wide one */}
+          <source media="(max-width: 767px)" srcSet={bannerMobile} />
+          <source media="(max-width: 1023px)" srcSet={bannerTablet} />
+          <img
+            src={bannerImage}
+            alt=""
+            fetchPriority="high"
+            className="h-full w-full object-cover object-top md:object-[30%_center] lg:object-[75%_center]"
+          />
+        </picture>
+      </div>
 
-      <div data-banner="content" className="page-width-small py-14">
-        <h1 id="services-banner-heading" data-banner="heading" className="max-w-[44rem]">
+      <div data-banner="content" className="page-width-small relative -mt-[74vw] pb-10 md:mt-0 md:!mx-0 md:py-14 md:max-w-[48%] xl:max-w-[55%]">
+        <h1 id="services-banner-heading" data-banner="heading" className="max-w-[44rem] !text-[28px] md:!text-[32px] lg:!text-[40px] xl:!text-[52px]">
           Comprehensive private GP care, all in one place, all on your terms.
         </h1>
 
@@ -69,15 +71,21 @@ function ServicesBanner() {
           appointments. 30-minute new GP consultations. Doctors who truly listen.
         </p>
 
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap md:mt-10 md:gap-6">
-          <Button to="/booking" size="lg" className="w-full sm:w-auto" data-banner="cta">
+        <div className="mt-8 flex flex-col gap-4 md:mt-10 md:items-start md:gap-5 xl:flex-row xl:flex-wrap xl:gap-6">
+          {/* on the tan mobile background both buttons use the white "light" style, like the other tan sections */}
+          <Button
+            to="/booking"
+            size="lg"
+            className="w-full md:w-auto max-md:border-white max-md:bg-transparent max-md:before:bg-white max-md:hover:text-ink max-md:focus-visible:text-ink"
+            data-banner="cta"
+          >
             Book a consultation
           </Button>
           <Button
             to="/contact"
             variant="outline"
             size="lg"
-            className="w-full sm:w-auto"
+            className="w-full md:w-auto max-md:border-white max-md:text-white max-md:before:bg-white max-md:hover:text-ink max-md:focus-visible:text-ink"
             data-banner="cta"
           >
             Contact the clinic
