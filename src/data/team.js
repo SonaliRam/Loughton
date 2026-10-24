@@ -2,14 +2,14 @@ import gursharanImage from "../assets/images/900 x 1349_our_Dr. Gursharan Rai.we
 import mansimranImage from "../assets/images/900 x 1349_our Doctors_Dr. Mansimran Cheema.webp";
 import samrathImage from "../assets/images/900 x 1349_our _Dr. Samrath Cheema.webp";
 
-// the intro image is a colour block for now, replace the empty "image" with a photo path such as "/team-intro.jpg" when it arrives
+import bannerImage from "../assets/images/our-team-banner.webp";
 
 export const teamIntro = {
   title: "Three local GPs. One shared commitment to your health.",
   text: "Our clinical team brings together decades of combined NHS and private practice experience, advanced specialist training, and above all, a genuine passion for knowing and caring for our patients as individuals.",
   // first names of the three doctors, shown one at a time in the rolling pill
   doctors: ["Dr Gursharan", "Dr Mansimran", "Dr Samrath"],
-  image: "",
+  image: bannerImage,
 };
 
 // text comes from the content document, the images are colour blocks until the photos arrive

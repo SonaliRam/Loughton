@@ -91,7 +91,7 @@ function TeamIntro() {
         <div className="relative mx-auto aspect-square w-full max-w-[40rem] lg:mx-0 lg:justify-self-end">
           <Block data-team-back tone="bg-cream" className="bottom-0 left-0 top-[8%] z-0 w-[92%]" />
           {image ? (
-            <img data-team-big src={image} alt="" className="absolute left-[8%] top-0 z-10 h-[92%] w-[92%] rounded-box object-cover" />
+            <img data-team-big src={image} alt="Loughton Private GP team" decoding="async" className="absolute left-[8%] top-0 z-10 h-[92%] w-[92%] rounded-box object-cover" />
           ) : (
             <Block data-team-big tone="bg-tan text-white/80" className="left-[8%] top-0 z-10 h-[92%] w-[92%]">
               <ImageSize sizes={[{ device: "All devices", size: "1200 × 1200 px" }]} />
