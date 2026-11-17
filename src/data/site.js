@@ -2,7 +2,7 @@ export const siteInfo = {
   name: "Loughton Private GP",
   phone: "+44 7854 147292",
   phoneLink: "tel:+447854147292",
-  // placeholder, confirm the WhatsApp number with the client
+  // WhatsApp chat link for +44 7854 147292, used by the floating button and the contact page
   whatsappLink: "https://wa.me/447854147292",
   email: "loughton.lpgp@gmail.com",
   address: [
