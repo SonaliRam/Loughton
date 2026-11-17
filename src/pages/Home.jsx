@@ -6,11 +6,11 @@ import Services from "../components/sections/Services";
 import MoreServices from "../components/sections/MoreServices";
 import Reviews from "../components/sections/Reviews";
 import ServiceCta from "../components/sections/ServiceCta";
-import AboutBanner from "../components/sections/AboutBanner";
+import HomeHero from "../components/sections/HomeHero";
 function Home() {
   return (
     <>
-      <AboutBanner />
+      <HomeHero />
       <FeatureStrip />
       <About />
       <WhyChooseUs />
