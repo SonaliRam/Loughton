@@ -1,9 +1,15 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import Button from "../ui/Button";
-import bannerImage from "../../assets/images/service-page-banner.webp";
-import bannerTablet from "../../assets/images/service-page-banner-tablet.webp";
+import ImageSize from "../ui/ImageSize";
 import bannerMobile from "../../assets/images/service-page-banner-mobile-new.webp";
+
+// sizes for the new banner photos, shown until the client's images are added
+// mobile already has its photo, so only tablet and desktop still need one
+const bannerSizes = [
+  { device: "Desktop", size: "2560 × 1000 px" },
+  { device: "Tablet", size: "2048 × 1240 px" },
+];
 
 function ServicesBanner() {
   const sectionRef = useRef(null);
@@ -48,17 +54,13 @@ function ServicesBanner() {
         aria-hidden="true"
         className="relative aspect-[900/1300] w-full bg-cream md:absolute md:inset-0 md:-z-10 md:aspect-auto"
       >
-        <picture className="block h-full w-full">
-          {/* mobile image fades into cream at the bottom so the text sits over it; tablet has its own; desktop uses the wide one */}
-          <source media="(max-width: 767px)" srcSet={bannerMobile} />
-          <source media="(max-width: 1023px)" srcSet={bannerTablet} />
-          <img
-            src={bannerImage}
-            alt=""
-            fetchPriority="high"
-            className="h-full w-full object-cover object-top md:object-[30%_center] lg:object-[75%_center]"
-          />
-        </picture>
+        {/* mobile photo, fades into the background at the bottom so the text sits over it */}
+        <img src={bannerMobile} alt="" fetchPriority="high" className="h-full w-full object-cover object-top md:hidden" />
+
+        {/* size label for the tablet and desktop photo, on the right half so it never covers the heading */}
+        <div className="absolute inset-y-0 right-0 hidden w-1/2 md:block">
+          <ImageSize sizes={bannerSizes} />
+        </div>
       </div>
 
       <div data-banner="content" className="page-width-small relative -mt-[74vw] pb-10 md:mt-0 md:!mx-0 md:py-14 md:max-w-[48%] xl:max-w-[55%]">
