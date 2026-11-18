@@ -1,14 +1,13 @@
-import AboutBanner from "../components/sections/AboutBanner";
-import ServiceCta from "../components/sections/ServiceCta";
 import AboutStatement from "../components/sections/AboutStatement";
 import AboutStory from "../components/sections/AboutStory";
 import AboutValues from "../components/sections/AboutValues";
+import ServiceCta from "../components/sections/ServiceCta";
+import HomeHero from "../components/sections/HomeHero";
 import { aboutMission, aboutVision } from "../data/about";
-import Hero from "../components/sections/Hero";
 function About() {
   return (
     <>
-      <Hero />
+      <HomeHero />
       <AboutStory />
       <AboutStatement
         id="vision-heading"

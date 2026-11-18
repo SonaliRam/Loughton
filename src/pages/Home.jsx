@@ -1,16 +1,15 @@
-
-import FeatureStrip from "../components/sections/FeatureStrip";
 import About from "../components/sections/About";
-import WhyChooseUs from "../components/sections/WhyChooseUs";
-import Services from "../components/sections/Services";
+import FeatureStrip from "../components/sections/FeatureStrip";
+import Hero from "../components/sections/Hero";
 import MoreServices from "../components/sections/MoreServices";
 import Reviews from "../components/sections/Reviews";
 import ServiceCta from "../components/sections/ServiceCta";
-import HomeHero from "../components/sections/HomeHero";
+import Services from "../components/sections/Services";
+import WhyChooseUs from "../components/sections/WhyChooseUs";
 function Home() {
   return (
     <>
-      <HomeHero />
+      <Hero />
       <FeatureStrip />
       <About />
       <WhyChooseUs />
