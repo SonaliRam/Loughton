@@ -11,6 +11,7 @@ import storySmall3 from "../assets/images/about-us-3rdrow-rightsideimgAll device
 import missionBig from "../assets/images/mission2All devices 1220 × 1315 px_1.webp";
 import missionSmall from "../assets/images/mission1All devices 940 × 805 px_2.webp";
 import visionBig from "../assets/images/vision1All devices 1220 × 1315 px.webp";
+import visionSmall from "../assets/images/aboutus-vision-stmt.webp";
 import valuePersonalised from "../assets/images/All devices 700 × 440 px_Personalised Care.webp";
 import valueClinical from "../assets/images/All devices 700 × 440 px_Clinical Excellence.webp";
 import valueTime from "../assets/images/All devices 700 × 440 px_Time & Attention.webp";
@@ -47,7 +48,7 @@ export const aboutMission = {
 
 export const aboutVision = {
   title: "Vision Statement",
-  images: { big: visionBig, small: "" },
+  images: { big: visionBig, small: visionSmall },
   text: "To become the most trusted private healthcare partner in Loughton, redefining modern general practice through exceptional service, proactive care, and genuinely personal patient experiences. We envision a healthier community where individuals and families feel supported, valued, and empowered to prioritise their wellbeing, no matter how busy life becomes.",
 };
 

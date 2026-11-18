@@ -1,15 +1,9 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "../../lib/gsap";
 import Button from "../ui/Button";
-import ImageSize from "../ui/ImageSize";
 import bannerMobile from "../../assets/images/service-page-banner-mobile-new.webp";
+import bannerDesktop from "../../assets/images/services_page_desktop.webp";
 
-// sizes for the new banner photos, shown until the client's images are added
-// mobile already has its photo, so only tablet and desktop still need one
-const bannerSizes = [
-  { device: "Desktop", size: "2560 × 1000 px" },
-  { device: "Tablet", size: "2048 × 1240 px" },
-];
 
 function ServicesBanner() {
   const sectionRef = useRef(null);
@@ -54,13 +48,19 @@ function ServicesBanner() {
         aria-hidden="true"
         className="relative aspect-[900/1300] w-full bg-cream md:absolute md:inset-0 md:-z-10 md:aspect-auto"
       >
-        {/* mobile photo, fades into the background at the bottom so the text sits over it */}
-        <img src={bannerMobile} alt="" fetchPriority="high" className="h-full w-full object-cover object-top md:hidden" />
+        <picture className="block h-full w-full">
+          {/* mobile photo fades into the background at the bottom so the text sits over it; tablet and desktop use the wide photo */}
+          <source media="(max-width: 767px)" srcSet={bannerMobile} />
+          <img
+            src={bannerDesktop}
+            alt=""
+            fetchPriority="high"
+            className="h-full w-full object-cover object-top md:object-[75%_center]"
+          />
+        </picture>
 
-        {/* size label for the tablet and desktop photo, on the right half so it never covers the heading */}
-        <div className="absolute inset-y-0 right-0 hidden w-1/2 md:block">
-          <ImageSize sizes={bannerSizes} />
-        </div>
+        {/* white fade from the left on tablet and desktop, so the dark heading and text stay readable over the photo */}
+        <div className="absolute inset-0 hidden bg-linear-to-r from-white/90 via-white/60 via-45% to-transparent to-75% md:block" />
       </div>
 
       <div data-banner="content" className="page-width-small relative -mt-[74vw] pb-10 md:mt-0 md:!mx-0 md:py-14 md:max-w-[48%] xl:max-w-[55%]">

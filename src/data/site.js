@@ -33,5 +33,5 @@ export const footerLinks = [
 export const socialLinks = [
   { label: "Instagram", url: "https://www.instagram.com/loughtonprivategp" },
   { label: "LinkedIn", url: "#" },
-  { label: "Facebook", url: "#" },
+  { label: "Facebook", url: "https://www.facebook.com/profile.php?id=61596670110921" },
 ];

@@ -6,6 +6,7 @@ import weightManagementPageImage from "../assets/images/service-page-Weight Mana
 import teleconsultationsPageImage from "../assets/images/service-page-All devices 920 × 1150 px copy_Teleconsultations.webp";
 import earWaxRemoval from "../assets/images/service-page-920 × 1150 px copy Ear Wax Removal .webp";
 import chronicDiseaseDesktop1 from "../assets/images/service-page-Chronic Disease Management Desktop 800 × 800 px_1 (1).webp";
+import chronicDiseaseDesktop2 from "../assets/images/services-Chronic-Disease-Management-two.webp";
 import chronicDiseaseDesktop3 from "../assets/images/service-page-Chronic Disease Management Desktop 800 × 800 px_3.webp";
 import gpConsultationsPageImage from "../assets/images/service-page-gp-consultation1140 x 1425 copy.webp";
 // every service on the Services page; the id is used for the anchor links from the home page cards
@@ -161,7 +162,7 @@ export const chronicDisease = {
       number: "02",
       title: "An active, ongoing approach",
       text: "We take an active, ongoing approach, rather than a reactive one. Your GP will work with you to set clear, realistic goals, monitor key markers over time, and adjust your treatment plan as your circumstances change, giving you the confidence that your condition is being properly and consistently managed.",
-      image: "",
+      image: chronicDiseaseDesktop2,
     },
     {
       number: "03",
