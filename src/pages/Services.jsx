@@ -8,7 +8,7 @@ import ServiceStackedCards from "../components/sections/ServiceStackedCards";
 import ServiceTeleconsultations from "../components/sections/ServiceTeleconsultations";
 import ServiceCta from "../components/sections/ServiceCta";
 import { earWax, serviceSplits } from "../data/servicePage";
-
+import Reviews from "../components/sections/Reviews";
 // pick a split service by its id, so the page order is clear in one place
 const getSplit = (id) => serviceSplits.find((service) => service.id === id);
 
@@ -25,6 +25,7 @@ function Services() {
       <ServiceSquare service={earWax} />
       <ServiceStackedCards />
       <ServiceTeleconsultations />
+      <Reviews />
       <ServiceCta />
     </>
   );
